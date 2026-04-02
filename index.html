@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AY. Design — Creative Graphic Design Studio in Saudi Arabia</title>
-<meta name="description" content="AY. Design is a Saudi-based creative graphic design studio specializing in brand identity, social media design, print materials, and presentations. 10+ years of experience serving 50+ brands.">
-<meta name="keywords" content="graphic design, brand identity, social media design, Saudi Arabia, creative studio, logo design, print design, presentations, AY Design">
-<meta name="author" content="Ayman Alostath — AY. Design">
-<meta property="og:title" content="AY. Design — Creative Graphic Design Studio">
-<meta property="og:description" content="We craft visual identities, social media campaigns, print materials, and presentations that elevate brands across Saudi Arabia and beyond.">
+<title>AY. Design — استوديو تصميم جرافيك إبداعي</title>
+<meta name="description" content="AY. Design استوديو تصميم جرافيك متخصص في الهوية البصرية، تصميم السوشيال ميديا، المطبوعات، والعروض التقديمية. خبرة أكثر من 10 سنوات وخدمة أكثر من 50 علامة تجارية.">
+<meta name="keywords" content="تصميم جرافيك, هوية بصرية, تصميم سوشيال ميديا, استوديو تصميم, تصميم شعارات, مطبوعات, عروض تقديمية, AY Design, graphic design, brand identity">
+<meta name="author" content="أيمن الأستاذ — AY. Design">
+<meta property="og:title" content="AY. Design — استوديو تصميم جرافيك إبداعي">
+<meta property="og:description" content="نصمم هويات بصرية، حملات سوشيال ميديا، مطبوعات، وعروض تقديمية ترتقي بالعلامات التجارية.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aydesignweb.github.io">
 <meta property="og:image" content="https://aydesignweb.github.io/ay-logo.png">
@@ -43,12 +43,19 @@ nav.scrolled{background:rgba(245,245,243,0.95);backdrop-filter:blur(12px);border
 .hero-content{position:relative;z-index:2;}
 .hero-eyebrow{font-size:9px;letter-spacing:6px;color:var(--mid);text-transform:uppercase;margin-bottom:40px;display:flex;align-items:center;gap:20px;opacity:0;animation:rise .9s .2s ease forwards;}
 .hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--mid);}
+/* RTL overrides */
+body{direction:rtl;text-align:right;}
 .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(64px,9vw,140px);font-weight:300;line-height:.9;letter-spacing:-4px;margin-bottom:32px;opacity:0;animation:rise .9s .4s ease forwards;}
 .hero-title em{font-style:italic;}
 .hero-sub{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--mid);margin-bottom:60px;opacity:0;animation:rise .9s .6s ease forwards;}
 .hero-cta{display:inline-flex;align-items:center;gap:16px;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:8px;transition:gap .3s;opacity:0;animation:rise .9s .8s ease forwards;}
 .hero-cta:hover{gap:28px;}
+#heroRotate{display:inline-block;position:relative;min-width:200px;}
+.hero-rotate-out{animation:rotateOut .4s ease forwards;}
+.hero-rotate-in{animation:rotateIn .4s ease forwards;}
 @keyframes rise{to{opacity:1;transform:translateY(0);}from{opacity:0;transform:translateY(24px);}}
+@keyframes rotateOut{to{opacity:0;transform:translateY(-30px) rotateX(40deg);}}
+@keyframes rotateIn{from{opacity:0;transform:translateY(30px) rotateX(-40deg);}to{opacity:1;transform:translateY(0) rotateX(0);}}
 
 /* Geometric decoration */
 .hero-triangle{position:absolute;right:20%;top:50%;transform:translateY(-50%);width:0;height:0;border-left:120px solid transparent;border-right:120px solid transparent;border-bottom:210px solid rgba(0,0,0,0.05);pointer-events:none;opacity:0;animation:fadeIn 1.5s .8s forwards;}
@@ -231,42 +238,42 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
     <img src="ay-logo.png" alt="Ay Design" style="height:44px;width:auto;" />
   </a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">من نحن</a></li>
+    <li><a href="#work">أعمالنا</a></li>
+    <li><a href="#services">خدماتنا</a></li>
+    <li><a href="#contact">تواصل</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-content">
-    <div class="hero-eyebrow">2015 — 2026 &nbsp;·&nbsp; Portfolio</div>
-    <h1 class="hero-title">Creative<br><em>Design</em><br>Studio</h1>
-    <p class="hero-sub">AY. Design &nbsp;·&nbsp; Brand Identity · Social Media · Print · Presentations</p>
-    <a href="#work" class="hero-cta">View Work &nbsp;→</a>
+    <div class="hero-eyebrow">استوديو تصميم إبداعي &nbsp;·&nbsp; بورتفوليو</div>
+    <h1 class="hero-title">نصمم<br><em><span id="heroRotate">هويات</span></em></h1>
+    <p class="hero-sub">AY. Design &nbsp;·&nbsp; البساطة هي المفتاح</p>
+    <a href="https://wa.me/966595074317" target="_blank" class="hero-cta">ابدأ مشروعك &nbsp;←</a>
   </div>
-  <div class="hero-triangle"></div>
-  <div class="hero-slash"></div>
-  <div class="hero-bg-word">Ay</div>
-  <div class="scroll-hint"><div class="scroll-line"></div>Scroll</div>
+  <div class="hero-triangle" data-speed="0.03"></div>
+  <div class="hero-slash" data-speed="0.05"></div>
+  <div class="hero-bg-word" data-speed="0.02">Ay</div>
+  <div class="scroll-hint"><div class="scroll-line"></div>مرر للأسفل</div>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <div class="m-item">Social Media<span class="m-dot"></span></div>
-    <div class="m-item">Brand Identity<span class="m-dot"></span></div>
-    <div class="m-item">Print Design<span class="m-dot"></span></div>
-    <div class="m-item">Presentations<span class="m-dot"></span></div>
-    <div class="m-item">Art Direction<span class="m-dot"></span></div>
-    <div class="m-item">Simplicity is the Key_<span class="m-dot"></span></div>
-    <div class="m-item">Social Media<span class="m-dot"></span></div>
-    <div class="m-item">Brand Identity<span class="m-dot"></span></div>
-    <div class="m-item">Print Design<span class="m-dot"></span></div>
-    <div class="m-item">Presentations<span class="m-dot"></span></div>
-    <div class="m-item">Art Direction<span class="m-dot"></span></div>
-    <div class="m-item">Simplicity is the Key_<span class="m-dot"></span></div>
+    <div class="m-item">سوشيال ميديا<span class="m-dot"></span></div>
+    <div class="m-item">هوية بصرية<span class="m-dot"></span></div>
+    <div class="m-item">مطبوعات<span class="m-dot"></span></div>
+    <div class="m-item">عروض تقديمية<span class="m-dot"></span></div>
+    <div class="m-item">إخراج فني<span class="m-dot"></span></div>
+    <div class="m-item">البساطة هي المفتاح_<span class="m-dot"></span></div>
+    <div class="m-item">سوشيال ميديا<span class="m-dot"></span></div>
+    <div class="m-item">هوية بصرية<span class="m-dot"></span></div>
+    <div class="m-item">مطبوعات<span class="m-dot"></span></div>
+    <div class="m-item">عروض تقديمية<span class="m-dot"></span></div>
+    <div class="m-item">إخراج فني<span class="m-dot"></span></div>
+    <div class="m-item">البساطة هي المفتاح_<span class="m-dot"></span></div>
   </div>
 </div>
 
@@ -275,17 +282,17 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
   <div class="about-grid">
     <div class="about-photo-wrap rv">
       <div class="about-photo">
-        <img class="about-photo-img" src="images/ayman-profile.png" alt="Ayman Alostath — AY. Design Creative Graphic Designer in Saudi Arabia" style="object-position:center top;">
+        <img class="about-photo-img" src="images/ayman-profile.png" alt="أيمن الأستاذ — مصمم جرافيك إبداعي AY. Design" style="object-position:center top;">
         <div class="about-photo-block"></div>
       </div>
-      <div class="about-year-badge">Est. 2015</div>
+      <div class="about-year-badge">منذ 2015</div>
     </div>
     <div>
-      <div class="section-tag rv">About Ay</div>
-      <div class="about-greeting rv d1">Hello,<br><span class="red">السلام عليكم</span></div>
-      <p class="about-name rv d2">AY. Design — Creative Studio</p>
-      <p class="about-role rv d2">Graphic Design Studio · Saudi Arabia</p>
-      <p class="about-bio rv d3">We are a creative graphic design studio based in Saudi Arabia, specializing in building powerful brand identities, crafting engaging social media campaigns, designing professional print materials, and creating impactful presentations. With over 10 years of experience and 50+ brands served, we transform ideas into visual stories that connect, inspire, and deliver results.</p>
+      <div class="section-tag rv">من نحن</div>
+      <div class="about-greeting rv d1">مرحباً،<br><span class="red">السلام عليكم</span></div>
+      <p class="about-name rv d2">AY. Design — استوديو تصميم إبداعي</p>
+      <p class="about-role rv d2">استوديو تصميم جرافيك إبداعي</p>
+      <p class="about-bio rv d3">نحن استوديو تصميم جرافيك إبداعي متخصصون في بناء هويات بصرية قوية، وتصميم حملات سوشيال ميديا جذابة، وإنتاج مطبوعات احترافية، وإعداد عروض تقديمية مؤثرة. بخبرة تتجاوز 10 سنوات وخدمة أكثر من 50 علامة تجارية، نحوّل الأفكار إلى قصص بصرية تلهم وتحقق النتائج.</p>
       <div class="tools-row rv d4">
         <div class="tool">Photoshop</div>
         <div class="tool">Illustrator</div>
@@ -299,40 +306,40 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
 
 <!-- STATS -->
 <div class="stats">
-  <div class="stat rv"><span class="stat-n">7+</span><span class="stat-l">Years Experience</span></div>
-  <div class="stat rv d1"><span class="stat-n">50+</span><span class="stat-l">Brands Served</span></div>
-  <div class="stat rv d2"><span class="stat-n">4</span><span class="stat-l">Core Services</span></div>
-  <div class="stat rv d3"><span class="stat-n">∞</span><span class="stat-l">Creative Vision</span></div>
+  <div class="stat rv"><span class="stat-n">+10</span><span class="stat-l">سنوات خبرة</span></div>
+  <div class="stat rv d1"><span class="stat-n">+50</span><span class="stat-l">علامة تجارية</span></div>
+  <div class="stat rv d2"><span class="stat-n">4</span><span class="stat-l">خدمات أساسية</span></div>
+  <div class="stat rv d3"><span class="stat-n">∞</span><span class="stat-l">رؤية إبداعية</span></div>
 </div>
 
 <!-- PHILOSOPHY -->
 <section class="philosophy">
-  <div class="phil-bg">Simplicity</div>
-  <p class="phil-q rv"><em>Simplicity</em><br>is the Key_</p>
-  <div class="phil-attr rv d1">Ay Design Philosophy</div>
+  <div class="phil-bg">البساطة</div>
+  <p class="phil-q rv"><em>البساطة</em><br>هي المفتاح_</p>
+  <div class="phil-attr rv d1">فلسفة AY. Design</div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="services-dark">
-  <div class="section-tag rv" style="color:rgba(255,255,255,.35);">Services</div>
+  <div class="section-tag rv" style="color:rgba(255,255,255,.35);">خدماتنا</div>
   <div class="svc-grid rv d1">
-    <div class="svc"><div class="svc-bg-n">01</div><div class="svc-slash">/</div><div class="svc-n">Social Media</div><div class="svc-d">Strategic visual content for Instagram, Facebook & platforms that drives engagement and builds brands.</div><div class="svc-arr">→</div></div>
-    <div class="svc"><div class="svc-bg-n">02</div><div class="svc-slash">/</div><div class="svc-n">Branding</div><div class="svc-d">Complete identity systems — logos, stationery, brand guides, and visual language that endures.</div><div class="svc-arr">→</div></div>
-    <div class="svc"><div class="svc-bg-n">03</div><div class="svc-slash">/</div><div class="svc-n">Printing</div><div class="svc-d">Brochures, catalogues, banners, vehicle wraps, and print collateral with precision and craft.</div><div class="svc-arr">→</div></div>
-    <div class="svc"><div class="svc-bg-n">04</div><div class="svc-slash">/</div><div class="svc-n">Presentations</div><div class="svc-d">Data-driven, visually compelling presentations that communicate ideas with clarity and impact.</div><div class="svc-arr">→</div></div>
+    <div class="svc"><div class="svc-bg-n">01</div><div class="svc-slash">/</div><div class="svc-n">سوشيال ميديا</div><div class="svc-d">محتوى بصري استراتيجي لمنصات التواصل الاجتماعي يعزز التفاعل ويبني العلامات التجارية.</div><div class="svc-arr">←</div></div>
+    <div class="svc"><div class="svc-bg-n">02</div><div class="svc-slash">/</div><div class="svc-n">هوية بصرية</div><div class="svc-d">أنظمة هوية متكاملة — شعارات، قرطاسية، أدلة العلامة التجارية، ولغة بصرية تدوم.</div><div class="svc-arr">←</div></div>
+    <div class="svc"><div class="svc-bg-n">03</div><div class="svc-slash">/</div><div class="svc-n">مطبوعات</div><div class="svc-d">بروشورات، كتالوجات، بانرات، رابّ سيارات، ومواد مطبوعة بدقة وحرفية.</div><div class="svc-arr">←</div></div>
+    <div class="svc"><div class="svc-bg-n">04</div><div class="svc-slash">/</div><div class="svc-n">عروض تقديمية</div><div class="svc-d">عروض تقديمية بصرية مبنية على البيانات توصل الأفكار بوضوح وتأثير.</div><div class="svc-arr">←</div></div>
   </div>
 </section>
 
 <!-- WORK -->
 <section id="work" class="work-section">
   <div class="work-head">
-    <h2 class="work-title rv">Selected<br><em>Work</em></h2>
+    <h2 class="work-title rv">أعمال<br><em>مختارة</em></h2>
     <div class="filters rv d1">
-      <button class="ftab active" data-filter="all">All</button>
-      <button class="ftab" data-filter="social">Social</button>
-      <button class="ftab" data-filter="branding">Branding</button>
-      <button class="ftab" data-filter="print">Print</button>
-      <button class="ftab" data-filter="pres">Presentations</button>
+      <button class="ftab active" data-filter="all">الكل</button>
+      <button class="ftab" data-filter="social">سوشيال</button>
+      <button class="ftab" data-filter="branding">هوية</button>
+      <button class="ftab" data-filter="print">مطبوعات</button>
+      <button class="ftab" data-filter="pres">عروض</button>
     </div>
   </div>
 
@@ -341,85 +348,85 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
     <!-- Saudi Electricity -->
     <div class="proj-card rv" data-cat="social">
       <div class="proj-img-wrap"><img src="images/sec-social.jpg" alt="Saudi Electricity Social Media" loading="lazy"></div>
-      <div class="card-meta"><div class="card-cat">Social Media</div><div class="card-name">Saudi Electricity Company</div><div class="card-hover-bar"></div></div>
+      <div class="card-meta"><div class="card-cat">سوشيال ميديا</div><div class="card-name">الشركة السعودية للكهرباء</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Palme D'Or -->
     <div class="proj-card rv d1" data-cat="social">
       <div class="proj-img-wrap"><img src="images/palmedOr-social.jpg" alt="Palme D'Or Perfume" loading="lazy"></div>
-      <div class="card-meta"><div class="card-cat">Social Media · Luxury</div><div class="card-name">Palme D'Or Perfume</div><div class="card-hover-bar"></div></div>
+      <div class="card-meta"><div class="card-cat">سوشيال ميديا · عطور</div><div class="card-name">Palme D'Or</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Razen Law -->
     <div class="proj-card rv d2" data-cat="branding">
       <div class="proj-img-wrap"><img src="images/razen-brand.jpg" alt="Razen Law Firm" loading="lazy"></div>
-      <div class="card-meta"><div class="card-cat">Brand Identity</div><div class="card-name">Razen Law Firm</div><div class="card-hover-bar"></div></div>
+      <div class="card-meta"><div class="card-cat">هوية بصرية</div><div class="card-name">مكتب رازن للمحاماة</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Ijarah -->
     <div class="proj-card rv" data-cat="social">
       <div class="proj-img-wrap"><img src="images/ijarah-social.jpg" alt="Ijarah Finance" loading="lazy"></div>
-      <div class="card-meta"><div class="card-cat">Social Media · Finance</div><div class="card-name">Ijarah Finance</div><div class="card-hover-bar"></div></div>
+      <div class="card-meta"><div class="card-cat">سوشيال ميديا · تمويل</div><div class="card-name">إجارة للتمويل</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Arco Valley -->
     <div class="proj-card rv d1" data-cat="branding">
       <div class="proj-img-wrap"><img src="images/arco-brand.jpg" alt="Arco Valley" loading="lazy"></div>
-      <div class="card-meta"><div class="card-cat">Brand Identity · Real Estate</div><div class="card-name">Arco Valley</div><div class="card-hover-bar"></div></div>
+      <div class="card-meta"><div class="card-cat">هوية بصرية · عقارات</div><div class="card-name">Arco Valley</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Syrup Presentation -->
     <div class="proj-card rv d2" data-cat="pres">
       <div class="proj-img-wrap"><img src="images/syrup-pres.jpg" alt="Syrup Presentation" loading="lazy"></div>
-      <div class="card-meta"><div class="card-cat">Presentations · Entertainment</div><div class="card-name">Syrup</div><div class="card-hover-bar"></div></div>
+      <div class="card-meta"><div class="card-cat">عروض تقديمية · ترفيه</div><div class="card-name">Syrup</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- VACA Burger -->
     <div class="proj-card rv" data-cat="social">
       <div class="proj-img-wrap"><img src="images/vaca-social.jpg" alt="VACA Burger" loading="lazy"></div>
-      <div class="card-meta"><div class="card-cat">Social Media · F&amp;B</div><div class="card-name">VACA Burger</div><div class="card-hover-bar"></div></div>
+      <div class="card-meta"><div class="card-cat">سوشيال ميديا · مطاعم</div><div class="card-name">VACA Burger</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Beeline -->
     <div class="proj-card rv d1" data-cat="branding">
       <div class="proj-img-wrap"><img src="images/beeline-brand.jpg" alt="BeeLine" loading="lazy"></div>
-      <div class="card-meta"><div class="card-cat">Brand Identity · Fashion</div><div class="card-name">BeeLine</div><div class="card-hover-bar"></div></div>
+      <div class="card-meta"><div class="card-cat">هوية بصرية · أزياء</div><div class="card-name">BeeLine</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- ATTA Print -->
     <div class="proj-card rv d2" data-cat="print">
       <div class="proj-img-wrap"><img src="images/atta-print.jpg" alt="ATTA BASES" loading="lazy"></div>
-      <div class="card-meta"><div class="card-cat">Print · Catalogue</div><div class="card-name">ATTA BASES Precast</div><div class="card-hover-bar"></div></div>
+      <div class="card-meta"><div class="card-cat">مطبوعات · كتالوج</div><div class="card-name">ATTA BASES</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- 6th Street -->
     <div class="proj-card rv" data-cat="social">
       <div class="proj-img-wrap"><img src="images/6thstreet-social.jpg" alt="6th Street" loading="lazy"></div>
-      <div class="card-meta"><div class="card-cat">Social Media · Lifestyle</div><div class="card-name">Shop 6th Street</div><div class="card-hover-bar"></div></div>
+      <div class="card-meta"><div class="card-cat">سوشيال ميديا · لايف ستايل</div><div class="card-name">6th Street</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Salwa -->
     <div class="proj-card rv d1" data-cat="branding">
       <div class="proj-img-wrap"><img src="images/salwa-brand.jpg" alt="Salwa Restaurant" loading="lazy"></div>
-      <div class="card-meta"><div class="card-cat">Brand Identity · Restaurant</div><div class="card-name">Salwa Fine Saudi Cuisine</div><div class="card-hover-bar"></div></div>
+      <div class="card-meta"><div class="card-cat">هوية بصرية · مطاعم</div><div class="card-name">مطعم سلوى</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- GamaVisa Print -->
     <div class="proj-card rv d2" data-cat="print">
       <div class="proj-img-wrap"><img src="images/gamavisa-print.jpg" alt="GamaVisa" loading="lazy"></div>
-      <div class="card-meta"><div class="card-cat">Print · Business Cards</div><div class="card-name">GamaVisa</div><div class="card-hover-bar"></div></div>
+      <div class="card-meta"><div class="card-cat">مطبوعات · بطاقات أعمال</div><div class="card-name">GamaVisa</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Saudi Chambers -->
     <div class="proj-card rv" data-cat="pres">
       <div class="proj-img-wrap"><img src="images/chambers-pres.jpg" alt="Federation of Saudi Chambers" loading="lazy"></div>
-      <div class="card-meta"><div class="card-cat">Presentations · Government</div><div class="card-name">Federation of Saudi Chambers</div><div class="card-hover-bar"></div></div>
+      <div class="card-meta"><div class="card-cat">عروض تقديمية · حكومي</div><div class="card-name">اتحاد الغرف التجارية</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Zestaritty Vehicle Wrap -->
     <div class="proj-card rv d1" data-cat="print">
       <div class="proj-img-wrap"><img src="images/zestaritty-print.jpg" alt="Zestaritty" loading="lazy"></div>
-      <div class="card-meta"><div class="card-cat">Print · Vehicle Wrap</div><div class="card-name">Zestaritty</div><div class="card-hover-bar"></div></div>
+      <div class="card-meta"><div class="card-cat">مطبوعات · رابّ سيارات</div><div class="card-name">Zestaritty</div><div class="card-hover-bar"></div></div>
     </div>
 
   </div>
@@ -429,9 +436,9 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div>
-    <div class="contact-eye rv">Let's Work Together</div>
-    <h2 class="contact-h rv d1">Start a<br><em>Project</em></h2>
-    <p class="contact-p rv d2">Whether it's a full brand identity, social media strategy, or print campaign — let's create something memorable together.</p>
+    <div class="contact-eye rv">تواصل معنا</div>
+    <h2 class="contact-h rv d1">ابدأ<br><em>مشروعك</em></h2>
+    <p class="contact-p rv d2">سواء كانت هوية بصرية كاملة، أو حملة سوشيال ميديا، أو مطبوعات — خلنا نصنع شي مميز مع بعض.</p>
   </div>
   <div class="rv d1">
     <div class="c-item"><div><div class="c-lbl">WhatsApp</div><div class="c-val">+966 595 074 317</div></div><a href="https://wa.me/966595074317" target="_blank" class="c-btn" style="border-color:#25D366;color:#25D366;">↗</a></div>
@@ -441,15 +448,45 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
 <!-- FOOTER -->
 <footer>
   <div class="ft-logo">A/<span style="font-family:Raleway;font-size:10px;letter-spacing:3px;font-weight:200;"> DESIGN</span></div>
-  <span class="ft-copy">© 2015–2026 AY. Design · All Rights Reserved</span>
+  <span class="ft-copy">© 2015–2026 AY. Design · جميع الحقوق محفوظة</span>
   <ul class="ft-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">من نحن</a></li>
+    <li><a href="#work">أعمالنا</a></li>
+    <li><a href="#contact">تواصل</a></li>
   </ul>
 </footer>
 
 <script>
+// Hero text rotation
+(function(){
+  const words = ["هويات","تجارب","حملات","قصص","علامات"];
+  const el = document.getElementById("heroRotate");
+  let i = 0;
+  if(el) setInterval(()=>{
+    el.className = "hero-rotate-out";
+    setTimeout(()=>{
+      i = (i+1) % words.length;
+      el.textContent = words[i];
+      el.className = "hero-rotate-in";
+    }, 400);
+  }, 2800);
+})();
+
+// Hero parallax on mouse
+(function(){
+  const hero = document.getElementById("hero");
+  if(!hero) return;
+  const els = hero.querySelectorAll("[data-speed]");
+  hero.addEventListener("mousemove", e=>{
+    const cx = (e.clientX / window.innerWidth - 0.5) * 2;
+    const cy = (e.clientY / window.innerHeight - 0.5) * 2;
+    els.forEach(el=>{
+      const s = parseFloat(el.dataset.speed) * 100;
+      el.style.transform = el.style.transform.replace(/translate\([^)]*\)/,"") + " translate("+cx*s+"px,"+cy*s+"px)";
+    });
+  });
+})();
+
 // Cursor
 const cur = document.getElementById("cursor");
 const ring = document.getElementById("cursorRing");
@@ -576,22 +613,22 @@ document.querySelectorAll(".ftab").forEach(tab=>{
   <h2 class="section-title rv">كيف نشتغل</h2>
   <div class="process-grid">
     <div class="process-step rv">
-      <p class="step-num">01 — Discovery</p>
+      <p class="step-num">01 — الاكتشاف</p>
       <p class="step-title">الفهم</p>
       <p class="step-desc">نبدأ بفهم علامتك التجارية، جمهورك، وأهدافك قبل أي قلم على ورق.</p>
     </div>
     <div class="process-step rv d1">
-      <p class="step-num">02 — Strategy</p>
+      <p class="step-num">02 — التخطيط</p>
       <p class="step-title">الاستراتيجية</p>
       <p class="step-desc">نبني مسار بصري واضح يعكس شخصيتك ويميّزك عن المنافسين.</p>
     </div>
     <div class="process-step rv d2">
-      <p class="step-num">03 — Design</p>
+      <p class="step-num">03 — التصميم</p>
       <p class="step-title">التصميم</p>
       <p class="step-desc">نُنتج تصاميم دقيقة ومتكاملة — من الشعار للمطبوعات للسوشيال.</p>
     </div>
     <div class="process-step rv d3">
-      <p class="step-num">04 — Deliver</p>
+      <p class="step-num">04 — التسليم</p>
       <p class="step-title">التسليم</p>
       <p class="step-desc">ملفات جاهزة بكل الصيغ، مع دليل هوية بصرية كامل.</p>
     </div>
