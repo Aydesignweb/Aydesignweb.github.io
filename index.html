@@ -37,6 +37,8 @@ nav.scrolled{background:rgba(245,245,243,0.95);backdrop-filter:blur(12px);border
 .nav-links a{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--black);text-decoration:none;font-weight:300;position:relative;}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--black);transition:width .35s;}
 .nav-links a:hover::after{width:100%;}
+.lang-btn{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--black);background:none;border:1px solid var(--black);padding:6px 14px;cursor:pointer;font-family:'Raleway',sans-serif;font-weight:300;transition:all .3s;border-radius:0;}
+.lang-btn:hover{background:var(--black);color:var(--white);}
 
 /* HERO */
 #hero{height:100vh;display:flex;align-items:center;padding:0 60px;position:relative;overflow:hidden;}
@@ -238,42 +240,43 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
     <img src="ay-logo.png" alt="Ay Design" style="height:44px;width:auto;" />
   </a>
   <ul class="nav-links">
-    <li><a href="#about">من نحن</a></li>
-    <li><a href="#work">أعمالنا</a></li>
-    <li><a href="#services">خدماتنا</a></li>
-    <li><a href="#contact">تواصل</a></li>
+    <li><a href="#about" data-ar="من نحن" data-en="About">من نحن</a></li>
+    <li><a href="#work" data-ar="أعمالنا" data-en="Work">أعمالنا</a></li>
+    <li><a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+    <li><a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a></li>
+    <li><button id="langToggle" class="lang-btn">EN</button></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-content">
-    <div class="hero-eyebrow">استوديو تصميم إبداعي &nbsp;·&nbsp; بورتفوليو</div>
-    <h1 class="hero-title">نصمم<br><em><span id="heroRotate">هويات</span></em></h1>
-    <p class="hero-sub">AY. Design &nbsp;·&nbsp; البساطة هي المفتاح</p>
-    <a href="https://wa.me/966595074317" target="_blank" class="hero-cta">ابدأ مشروعك &nbsp;←</a>
+    <div class="hero-eyebrow" data-ar="استوديو تصميم إبداعي &nbsp;·&nbsp; بورتفوليو" data-en="Creative Studio &nbsp;·&nbsp; Portfolio">استوديو تصميم إبداعي &nbsp;·&nbsp; بورتفوليو</div>
+    <h1 class="hero-title" data-ar="نصمم" data-en="We Design">نصمم<br><em><span id="heroRotate" data-ar="هويات" data-en="Brands">هويات</span></em></h1>
+    <p class="hero-sub" data-ar="AY. Design &nbsp;·&nbsp; البساطة هي المفتاح" data-en="AY. Design &nbsp;·&nbsp; Where Simplicity Meets Creativity">AY. Design &nbsp;·&nbsp; البساطة هي المفتاح</p>
+    <a href="https://wa.me/966595074317" target="_blank" class="hero-cta" data-ar="ابدأ مشروعك &nbsp;←" data-en="Start a Project &nbsp;→">ابدأ مشروعك &nbsp;←</a>
   </div>
   <div class="hero-triangle" data-speed="0.03"></div>
   <div class="hero-slash" data-speed="0.05"></div>
   <div class="hero-bg-word" data-speed="0.02">Ay</div>
-  <div class="scroll-hint"><div class="scroll-line"></div>مرر للأسفل</div>
+  <div class="scroll-hint"><div class="scroll-line"></div><span data-ar="مرر للأسفل" data-en="Scroll">مرر للأسفل</span></div>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <div class="m-item">سوشيال ميديا<span class="m-dot"></span></div>
-    <div class="m-item">هوية بصرية<span class="m-dot"></span></div>
-    <div class="m-item">مطبوعات<span class="m-dot"></span></div>
-    <div class="m-item">عروض تقديمية<span class="m-dot"></span></div>
-    <div class="m-item">إخراج فني<span class="m-dot"></span></div>
-    <div class="m-item">البساطة هي المفتاح_<span class="m-dot"></span></div>
-    <div class="m-item">سوشيال ميديا<span class="m-dot"></span></div>
-    <div class="m-item">هوية بصرية<span class="m-dot"></span></div>
-    <div class="m-item">مطبوعات<span class="m-dot"></span></div>
-    <div class="m-item">عروض تقديمية<span class="m-dot"></span></div>
-    <div class="m-item">إخراج فني<span class="m-dot"></span></div>
-    <div class="m-item">البساطة هي المفتاح_<span class="m-dot"></span></div>
+    <div class="m-item" data-ar="سوشيال ميديا" data-en="Social Media">سوشيال ميديا<span class="m-dot"></span></div>
+    <div class="m-item" data-ar="هوية بصرية" data-en="Brand Identity">هوية بصرية<span class="m-dot"></span></div>
+    <div class="m-item" data-ar="مطبوعات" data-en="Print Design">مطبوعات<span class="m-dot"></span></div>
+    <div class="m-item" data-ar="عروض تقديمية" data-en="Presentations">عروض تقديمية<span class="m-dot"></span></div>
+    <div class="m-item" data-ar="إخراج فني" data-en="Art Direction">إخراج فني<span class="m-dot"></span></div>
+    <div class="m-item" data-ar="البساطة هي المفتاح_" data-en="Simplicity is the Key_">البساطة هي المفتاح_<span class="m-dot"></span></div>
+    <div class="m-item" data-ar="سوشيال ميديا" data-en="Social Media">سوشيال ميديا<span class="m-dot"></span></div>
+    <div class="m-item" data-ar="هوية بصرية" data-en="Brand Identity">هوية بصرية<span class="m-dot"></span></div>
+    <div class="m-item" data-ar="مطبوعات" data-en="Print Design">مطبوعات<span class="m-dot"></span></div>
+    <div class="m-item" data-ar="عروض تقديمية" data-en="Presentations">عروض تقديمية<span class="m-dot"></span></div>
+    <div class="m-item" data-ar="إخراج فني" data-en="Art Direction">إخراج فني<span class="m-dot"></span></div>
+    <div class="m-item" data-ar="البساطة هي المفتاح_" data-en="Simplicity is the Key_">البساطة هي المفتاح_<span class="m-dot"></span></div>
   </div>
 </div>
 
@@ -285,14 +288,14 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
         <img class="about-photo-img" src="images/ayman-profile.png" alt="أيمن الأستاذ — مصمم جرافيك إبداعي AY. Design" style="object-position:center top;">
         <div class="about-photo-block"></div>
       </div>
-      <div class="about-year-badge">منذ 2015</div>
+      <div class="about-year-badge" data-ar="منذ 2015" data-en="Est. 2015">منذ 2015</div>
     </div>
     <div>
-      <div class="section-tag rv">من نحن</div>
-      <div class="about-greeting rv d1">مرحباً،<br><span class="red">السلام عليكم</span></div>
-      <p class="about-name rv d2">AY. Design — استوديو تصميم إبداعي</p>
-      <p class="about-role rv d2">استوديو تصميم جرافيك إبداعي</p>
-      <p class="about-bio rv d3">نحن استوديو تصميم جرافيك إبداعي متخصصون في بناء هويات بصرية قوية، وتصميم حملات سوشيال ميديا جذابة، وإنتاج مطبوعات احترافية، وإعداد عروض تقديمية مؤثرة. بخبرة تتجاوز 10 سنوات وخدمة أكثر من 50 علامة تجارية، نحوّل الأفكار إلى قصص بصرية تلهم وتحقق النتائج.</p>
+      <div class="section-tag rv" data-ar="من نحن" data-en="About Ay">من نحن</div>
+      <div class="about-greeting rv d1" data-ar="مرحباً،" data-en="Hello,">مرحباً،<br><span class="red">السلام عليكم</span></div>
+      <p class="about-name rv d2" data-ar="AY. Design — استوديو تصميم إبداعي" data-en="AY. Design — Creative Studio">AY. Design — استوديو تصميم إبداعي</p>
+      <p class="about-role rv d2" data-ar="استوديو تصميم جرافيك إبداعي" data-en="Creative Graphic Design Studio">استوديو تصميم جرافيك إبداعي</p>
+      <p class="about-bio rv d3" data-ar="نحن استوديو تصميم جرافيك إبداعي متخصصون في بناء هويات بصرية قوية، وتصميم حملات سوشيال ميديا جذابة، وإنتاج مطبوعات احترافية، وإعداد عروض تقديمية مؤثرة. بخبرة تتجاوز 10 سنوات وخدمة أكثر من 50 علامة تجارية، نحوّل الأفكار إلى قصص بصرية تلهم وتحقق النتائج." data-en="We are a creative graphic design studio specializing in building powerful brand identities, crafting engaging social media campaigns, designing professional print materials, and creating impactful presentations. With over 10 years of experience and 50+ brands served, we transform ideas into visual stories that connect, inspire, and deliver results.">نحن استوديو تصميم جرافيك إبداعي متخصصون في بناء هويات بصرية قوية، وتصميم حملات سوشيال ميديا جذابة، وإنتاج مطبوعات احترافية، وإعداد عروض تقديمية مؤثرة. بخبرة تتجاوز 10 سنوات وخدمة أكثر من 50 علامة تجارية، نحوّل الأفكار إلى قصص بصرية تلهم وتحقق النتائج.</p>
       <div class="tools-row rv d4">
         <div class="tool">Photoshop</div>
         <div class="tool">Illustrator</div>
@@ -306,40 +309,40 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
 
 <!-- STATS -->
 <div class="stats">
-  <div class="stat rv"><span class="stat-n">+10</span><span class="stat-l">سنوات خبرة</span></div>
-  <div class="stat rv d1"><span class="stat-n">+50</span><span class="stat-l">علامة تجارية</span></div>
-  <div class="stat rv d2"><span class="stat-n">4</span><span class="stat-l">خدمات أساسية</span></div>
-  <div class="stat rv d3"><span class="stat-n">∞</span><span class="stat-l">رؤية إبداعية</span></div>
+  <div class="stat rv"><span class="stat-n">+10</span><span class="stat-l" data-ar="سنوات خبرة" data-en="Years Experience">سنوات خبرة</span></div>
+  <div class="stat rv d1"><span class="stat-n">+50</span><span class="stat-l" data-ar="علامة تجارية" data-en="Brands Served">علامة تجارية</span></div>
+  <div class="stat rv d2"><span class="stat-n">4</span><span class="stat-l" data-ar="خدمات أساسية" data-en="Core Services">خدمات أساسية</span></div>
+  <div class="stat rv d3"><span class="stat-n">∞</span><span class="stat-l" data-ar="رؤية إبداعية" data-en="Creative Vision">رؤية إبداعية</span></div>
 </div>
 
 <!-- PHILOSOPHY -->
 <section class="philosophy">
-  <div class="phil-bg">البساطة</div>
-  <p class="phil-q rv"><em>البساطة</em><br>هي المفتاح_</p>
-  <div class="phil-attr rv d1">فلسفة AY. Design</div>
+  <div class="phil-bg" data-ar="البساطة" data-en="Simplicity">البساطة</div>
+  <p class="phil-q rv" data-ar-html="<em>البساطة</em><br>هي المفتاح_" data-en-html="<em>Simplicity</em><br>is the Key_"><em>البساطة</em><br>هي المفتاح_</p>
+  <div class="phil-attr rv d1" data-ar="فلسفة AY. Design" data-en="AY. Design Philosophy">فلسفة AY. Design</div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="services-dark">
-  <div class="section-tag rv" style="color:rgba(255,255,255,.35);">خدماتنا</div>
+  <div class="section-tag rv" style="color:rgba(255,255,255,.35);" data-ar="خدماتنا" data-en="Services">خدماتنا</div>
   <div class="svc-grid rv d1">
-    <div class="svc"><div class="svc-bg-n">01</div><div class="svc-slash">/</div><div class="svc-n">سوشيال ميديا</div><div class="svc-d">محتوى بصري استراتيجي لمنصات التواصل الاجتماعي يعزز التفاعل ويبني العلامات التجارية.</div><div class="svc-arr">←</div></div>
-    <div class="svc"><div class="svc-bg-n">02</div><div class="svc-slash">/</div><div class="svc-n">هوية بصرية</div><div class="svc-d">أنظمة هوية متكاملة — شعارات، قرطاسية، أدلة العلامة التجارية، ولغة بصرية تدوم.</div><div class="svc-arr">←</div></div>
-    <div class="svc"><div class="svc-bg-n">03</div><div class="svc-slash">/</div><div class="svc-n">مطبوعات</div><div class="svc-d">بروشورات، كتالوجات، بانرات، رابّ سيارات، ومواد مطبوعة بدقة وحرفية.</div><div class="svc-arr">←</div></div>
-    <div class="svc"><div class="svc-bg-n">04</div><div class="svc-slash">/</div><div class="svc-n">عروض تقديمية</div><div class="svc-d">عروض تقديمية بصرية مبنية على البيانات توصل الأفكار بوضوح وتأثير.</div><div class="svc-arr">←</div></div>
+    <div class="svc"><div class="svc-bg-n">01</div><div class="svc-slash">/</div><div class="svc-n" data-ar="سوشيال ميديا" data-en="Social Media">سوشيال ميديا</div><div class="svc-d" data-ar="محتوى بصري استراتيجي لمنصات التواصل الاجتماعي يعزز التفاعل ويبني العلامات التجارية." data-en="Strategic visual content for Instagram, Facebook & platforms that drives engagement and builds brands.">محتوى بصري استراتيجي لمنصات التواصل الاجتماعي يعزز التفاعل ويبني العلامات التجارية.</div><div class="svc-arr">←</div></div>
+    <div class="svc"><div class="svc-bg-n">02</div><div class="svc-slash">/</div><div class="svc-n" data-ar="هوية بصرية" data-en="Branding">هوية بصرية</div><div class="svc-d" data-ar="أنظمة هوية متكاملة — شعارات، قرطاسية، أدلة العلامة التجارية، ولغة بصرية تدوم." data-en="Complete identity systems — logos, stationery, brand guides, and visual language that endures.">أنظمة هوية متكاملة — شعارات، قرطاسية، أدلة العلامة التجارية، ولغة بصرية تدوم.</div><div class="svc-arr">←</div></div>
+    <div class="svc"><div class="svc-bg-n">03</div><div class="svc-slash">/</div><div class="svc-n" data-ar="مطبوعات" data-en="Printing">مطبوعات</div><div class="svc-d" data-ar="بروشورات، كتالوجات، بانرات، رابّ سيارات، ومواد مطبوعة بدقة وحرفية." data-en="Brochures, catalogues, banners, vehicle wraps, and print collateral with precision and craft.">بروشورات، كتالوجات، بانرات، رابّ سيارات، ومواد مطبوعة بدقة وحرفية.</div><div class="svc-arr">←</div></div>
+    <div class="svc"><div class="svc-bg-n">04</div><div class="svc-slash">/</div><div class="svc-n" data-ar="عروض تقديمية" data-en="Presentations">عروض تقديمية</div><div class="svc-d" data-ar="عروض تقديمية بصرية مبنية على البيانات توصل الأفكار بوضوح وتأثير." data-en="Data-driven, visually compelling presentations that communicate ideas with clarity and impact.">عروض تقديمية بصرية مبنية على البيانات توصل الأفكار بوضوح وتأثير.</div><div class="svc-arr">←</div></div>
   </div>
 </section>
 
 <!-- WORK -->
 <section id="work" class="work-section">
   <div class="work-head">
-    <h2 class="work-title rv">أعمال<br><em>مختارة</em></h2>
+    <h2 class="work-title rv" data-ar-html="أعمال<br><em>مختارة</em>" data-en-html="Selected<br><em>Work</em>">أعمال<br><em>مختارة</em></h2>
     <div class="filters rv d1">
-      <button class="ftab active" data-filter="all">الكل</button>
-      <button class="ftab" data-filter="social">سوشيال</button>
-      <button class="ftab" data-filter="branding">هوية</button>
-      <button class="ftab" data-filter="print">مطبوعات</button>
-      <button class="ftab" data-filter="pres">عروض</button>
+      <button class="ftab active" data-filter="all" data-ar="الكل" data-en="All">الكل</button>
+      <button class="ftab" data-filter="social" data-ar="سوشيال" data-en="Social">سوشيال</button>
+      <button class="ftab" data-filter="branding" data-ar="هوية" data-en="Branding">هوية</button>
+      <button class="ftab" data-filter="print" data-ar="مطبوعات" data-en="Print">مطبوعات</button>
+      <button class="ftab" data-filter="pres" data-ar="عروض" data-en="Presentations">عروض</button>
     </div>
   </div>
 
@@ -436,9 +439,9 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div>
-    <div class="contact-eye rv">تواصل معنا</div>
-    <h2 class="contact-h rv d1">ابدأ<br><em>مشروعك</em></h2>
-    <p class="contact-p rv d2">سواء كانت هوية بصرية كاملة، أو حملة سوشيال ميديا، أو مطبوعات — خلنا نصنع شي مميز مع بعض.</p>
+    <div class="contact-eye rv" data-ar="تواصل معنا" data-en="Get In Touch">تواصل معنا</div>
+    <h2 class="contact-h rv d1" data-ar-html="ابدأ<br><em>مشروعك</em>" data-en-html="Start a<br><em>Project</em>">ابدأ<br><em>مشروعك</em></h2>
+    <p class="contact-p rv d2" data-ar="سواء كانت هوية بصرية كاملة، أو حملة سوشيال ميديا، أو مطبوعات — خلنا نصنع شي مميز مع بعض." data-en="Whether it's a full brand identity, social media strategy, or print campaign — let's create something memorable together.">سواء كانت هوية بصرية كاملة، أو حملة سوشيال ميديا، أو مطبوعات — خلنا نصنع شي مميز مع بعض.</p>
   </div>
   <div class="rv d1">
     <div class="c-item"><div><div class="c-lbl">WhatsApp</div><div class="c-val">+966 595 074 317</div></div><a href="https://wa.me/966595074317" target="_blank" class="c-btn" style="border-color:#25D366;color:#25D366;">↗</a></div>
@@ -448,26 +451,67 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
 <!-- FOOTER -->
 <footer>
   <div class="ft-logo">A/<span style="font-family:Raleway;font-size:10px;letter-spacing:3px;font-weight:200;"> DESIGN</span></div>
-  <span class="ft-copy">© 2015–2026 AY. Design · جميع الحقوق محفوظة</span>
+  <span class="ft-copy" data-ar="© 2015–2026 AY. Design · جميع الحقوق محفوظة" data-en="© 2015–2026 AY. Design · All Rights Reserved">© 2015–2026 AY. Design · جميع الحقوق محفوظة</span>
   <ul class="ft-links">
-    <li><a href="#about">من نحن</a></li>
-    <li><a href="#work">أعمالنا</a></li>
-    <li><a href="#contact">تواصل</a></li>
+    <li><a href="#about" data-ar="من نحن" data-en="About">من نحن</a></li>
+    <li><a href="#work" data-ar="أعمالنا" data-en="Work">أعمالنا</a></li>
+    <li><a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a></li>
   </ul>
 </footer>
 
 <script>
+// Language Toggle
+let currentLang = "ar";
+const arWords = ["هويات","تجارب","حملات","قصص","علامات"];
+const enWords = ["Brands","Experiences","Identities","Campaigns","Stories"];
+let rotateWords = arWords;
+
+document.getElementById("langToggle").addEventListener("click", function(){
+  currentLang = currentLang === "ar" ? "en" : "ar";
+  this.textContent = currentLang === "ar" ? "EN" : "عربي";
+  rotateWords = currentLang === "ar" ? arWords : enWords;
+
+  // Switch direction
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+  document.body.style.direction = currentLang === "ar" ? "rtl" : "ltr";
+  document.body.style.textAlign = currentLang === "ar" ? "right" : "left";
+
+  // Switch arrows in svc
+  document.querySelectorAll(".svc-arr").forEach(a => a.textContent = currentLang === "ar" ? "←" : "→");
+
+  // Update all text elements
+  document.querySelectorAll("[data-"+currentLang+"]").forEach(el => {
+    el.innerHTML = el.dataset[currentLang];
+    // Re-add dot for marquee items
+    if(el.classList.contains("m-item")) el.innerHTML += '<span class="m-dot"></span>';
+  });
+
+  // Update HTML elements (titles with <br><em>)
+  document.querySelectorAll("[data-"+currentLang+"-html]").forEach(el => {
+    el.innerHTML = el.dataset[currentLang+"Html"];
+  });
+
+  // Update hero title structure
+  const heroTitle = document.querySelector(".hero-title");
+  const heroRotate = document.getElementById("heroRotate");
+  if(heroTitle && heroRotate){
+    heroTitle.innerHTML = heroTitle.dataset[currentLang] + '<br><em><span id="heroRotate">' + rotateWords[0] + '</span></em>';
+  }
+});
+
 // Hero text rotation
 (function(){
-  const words = ["هويات","تجارب","حملات","قصص","علامات"];
   const el = document.getElementById("heroRotate");
   let i = 0;
   if(el) setInterval(()=>{
-    el.className = "hero-rotate-out";
+    const target = document.getElementById("heroRotate");
+    if(!target) return;
+    target.className = "hero-rotate-out";
     setTimeout(()=>{
-      i = (i+1) % words.length;
-      el.textContent = words[i];
-      el.className = "hero-rotate-in";
+      i = (i+1) % rotateWords.length;
+      target.textContent = rotateWords[i];
+      target.className = "hero-rotate-in";
     }, 400);
   }, 2800);
 })();
@@ -609,28 +653,28 @@ document.querySelectorAll(".ftab").forEach(tab=>{
 
 <!-- Process Section -->
 <section class="process-section">
-  <p class="sub-title rv">الطريقة</p>
-  <h2 class="section-title rv">كيف نشتغل</h2>
+  <p class="sub-title rv" data-ar="الطريقة" data-en="The Method">الطريقة</p>
+  <h2 class="section-title rv" data-ar="كيف نشتغل" data-en="How We Work">كيف نشتغل</h2>
   <div class="process-grid">
     <div class="process-step rv">
-      <p class="step-num">01 — الاكتشاف</p>
-      <p class="step-title">الفهم</p>
-      <p class="step-desc">نبدأ بفهم علامتك التجارية، جمهورك، وأهدافك قبل أي قلم على ورق.</p>
+      <p class="step-num" data-ar="01 — الاكتشاف" data-en="01 — Discovery">01 — الاكتشاف</p>
+      <p class="step-title" data-ar="الفهم" data-en="Understanding">الفهم</p>
+      <p class="step-desc" data-ar="نبدأ بفهم علامتك التجارية، جمهورك، وأهدافك قبل أي قلم على ورق." data-en="We start by understanding your brand, audience, and goals before any pen hits paper.">نبدأ بفهم علامتك التجارية، جمهورك، وأهدافك قبل أي قلم على ورق.</p>
     </div>
     <div class="process-step rv d1">
-      <p class="step-num">02 — التخطيط</p>
-      <p class="step-title">الاستراتيجية</p>
-      <p class="step-desc">نبني مسار بصري واضح يعكس شخصيتك ويميّزك عن المنافسين.</p>
+      <p class="step-num" data-ar="02 — التخطيط" data-en="02 — Strategy">02 — التخطيط</p>
+      <p class="step-title" data-ar="الاستراتيجية" data-en="Strategy">الاستراتيجية</p>
+      <p class="step-desc" data-ar="نبني مسار بصري واضح يعكس شخصيتك ويميّزك عن المنافسين." data-en="We build a clear visual path that reflects your personality and sets you apart.">نبني مسار بصري واضح يعكس شخصيتك ويميّزك عن المنافسين.</p>
     </div>
     <div class="process-step rv d2">
-      <p class="step-num">03 — التصميم</p>
-      <p class="step-title">التصميم</p>
-      <p class="step-desc">نُنتج تصاميم دقيقة ومتكاملة — من الشعار للمطبوعات للسوشيال.</p>
+      <p class="step-num" data-ar="03 — التصميم" data-en="03 — Design">03 — التصميم</p>
+      <p class="step-title" data-ar="التصميم" data-en="Design">التصميم</p>
+      <p class="step-desc" data-ar="نُنتج تصاميم دقيقة ومتكاملة — من الشعار للمطبوعات للسوشيال." data-en="We produce precise, cohesive designs — from logos to print to social media.">نُنتج تصاميم دقيقة ومتكاملة — من الشعار للمطبوعات للسوشيال.</p>
     </div>
     <div class="process-step rv d3">
-      <p class="step-num">04 — التسليم</p>
-      <p class="step-title">التسليم</p>
-      <p class="step-desc">ملفات جاهزة بكل الصيغ، مع دليل هوية بصرية كامل.</p>
+      <p class="step-num" data-ar="04 — التسليم" data-en="04 — Deliver">04 — التسليم</p>
+      <p class="step-title" data-ar="التسليم" data-en="Delivery">التسليم</p>
+      <p class="step-desc" data-ar="ملفات جاهزة بكل الصيغ، مع دليل هوية بصرية كامل." data-en="Ready files in all formats, with a complete brand identity guide.">ملفات جاهزة بكل الصيغ، مع دليل هوية بصرية كامل.</p>
     </div>
   </div>
 </section>
@@ -638,8 +682,8 @@ document.querySelectorAll(".ftab").forEach(tab=>{
 <!-- Testimonials -->
 <section class="testimonials-section">
   <div class="testimonials-inner">
-    <p class="sub-title rv">ماذا قالوا</p>
-    <h2 class="section-title rv">آراء العملاء</h2>
+    <p class="sub-title rv" data-ar="ماذا قالوا" data-en="What They Said">ماذا قالوا</p>
+    <h2 class="section-title rv" data-ar="آراء العملاء" data-en="Client Reviews">آراء العملاء</h2>
     <div class="testi-grid">
       <div class="testi-card rv">
         <p class="testi-text">"AY. Design حوّل هوية علامتنا التجارية بالكامل. التصميم احترافي ويعكس شخصيتنا تماماً."</p>
