@@ -194,18 +194,13 @@ body{direction:rtl;text-align:right;}
 .c-btn{width:44px;height:44px;border:1px solid var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;transition:all .3s;text-decoration:none;color:var(--black);flex-shrink:0;}
 .c-btn:hover{background:var(--black);color:var(--white);}
 
-/* CLIENTS LOGOS */
-.clients-section{padding:100px 60px;text-align:center;overflow:hidden;}
-.clients-title{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--mid);margin-bottom:60px;display:flex;align-items:center;justify-content:center;gap:16px;}
-.clients-title::before,.clients-title::after{content:'';width:40px;height:1px;background:var(--mid);}
-.clients-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--gray);}
-.client-logo{background:var(--white);padding:40px 24px;display:flex;align-items:center;justify-content:center;transition:all .4s;cursor:default;position:relative;overflow:hidden;}
-.client-logo:hover{background:#f0f0ee;}
-.client-logo-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--mid);letter-spacing:0;transition:color .4s;}
-.client-logo:hover .client-logo-name{color:var(--black);}
-.client-logo-img{max-height:40px;max-width:120px;object-fit:contain;filter:grayscale(100%) opacity(0.5);transition:filter .4s;}
-.client-logo:hover .client-logo-img{filter:grayscale(0%) opacity(1);}
-@media(max-width:900px){.clients-grid{grid-template-columns:repeat(3,1fr);}.clients-section{padding:60px 24px;}}
+/* CLIENTS MARQUEE */
+.clients-marquee{background:var(--black);overflow:hidden;padding:28px 0;border-top:1px solid #222;border-bottom:1px solid #222;}
+.clients-track{display:flex;animation:clientsScroll 30s linear infinite;white-space:nowrap;}
+.cl-item{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.6);padding:0 36px;display:flex;align-items:center;gap:36px;flex-shrink:0;transition:color .3s;}
+.cl-item:hover{color:#fff;}
+.cl-dot{width:5px;height:5px;background:rgba(255,255,255,.3);border-radius:50%;display:inline-block;flex-shrink:0;}
+@keyframes clientsScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 /* CONTACT FORM */
 .contact-form{display:flex;flex-direction:column;gap:20px;}
@@ -296,13 +291,13 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
     <div class="m-item" data-ar="مطبوعات" data-en="Print Design">مطبوعات<span class="m-dot"></span></div>
     <div class="m-item" data-ar="عروض تقديمية" data-en="Presentations">عروض تقديمية<span class="m-dot"></span></div>
     <div class="m-item" data-ar="إخراج فني" data-en="Art Direction">إخراج فني<span class="m-dot"></span></div>
-    <div class="m-item" data-ar="البساطة هي المفتاح_" data-en="Simplicity is the Key_">البساطة هي المفتاح_<span class="m-dot"></span></div>
+    <div class="m-item" data-ar="نرتقي بعلامتك_" data-en="Elevating Your Brand_">نرتقي بعلامتك_<span class="m-dot"></span></div>
     <div class="m-item" data-ar="سوشيال ميديا" data-en="Social Media">سوشيال ميديا<span class="m-dot"></span></div>
     <div class="m-item" data-ar="هوية بصرية" data-en="Brand Identity">هوية بصرية<span class="m-dot"></span></div>
     <div class="m-item" data-ar="مطبوعات" data-en="Print Design">مطبوعات<span class="m-dot"></span></div>
     <div class="m-item" data-ar="عروض تقديمية" data-en="Presentations">عروض تقديمية<span class="m-dot"></span></div>
     <div class="m-item" data-ar="إخراج فني" data-en="Art Direction">إخراج فني<span class="m-dot"></span></div>
-    <div class="m-item" data-ar="البساطة هي المفتاح_" data-en="Simplicity is the Key_">البساطة هي المفتاح_<span class="m-dot"></span></div>
+    <div class="m-item" data-ar="نرتقي بعلامتك_" data-en="Elevating Your Brand_">نرتقي بعلامتك_<span class="m-dot"></span></div>
   </div>
 </div>
 
@@ -341,33 +336,48 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
   <div class="stat rv d3"><span class="stat-n">∞</span><span class="stat-l" data-ar="رؤية إبداعية" data-en="Creative Vision">رؤية إبداعية</span></div>
 </div>
 
-<!-- CLIENTS -->
-<section class="clients-section">
-  <div class="clients-title rv" data-ar="عملاء وثقوا بنا" data-en="Trusted By">عملاء وثقوا بنا</div>
-  <div class="clients-grid">
-    <div class="client-logo rv"><span class="client-logo-name">الشركة السعودية<br>للكهرباء</span></div>
-    <div class="client-logo rv d1"><span class="client-logo-name">وزارة العدل</span></div>
-    <div class="client-logo rv d2"><span class="client-logo-name">اتحاد الغرف<br>التجارية</span></div>
-    <div class="client-logo rv d3"><span class="client-logo-name">يونيكوم</span></div>
-    <div class="client-logo rv d4"><span class="client-logo-name">Palme D'Or</span></div>
-    <div class="client-logo rv"><span class="client-logo-name">إجارة للتمويل</span></div>
-    <div class="client-logo rv d1"><span class="client-logo-name">Arco Valley</span></div>
-    <div class="client-logo rv d2"><span class="client-logo-name">VACA Burger</span></div>
-    <div class="client-logo rv d3"><span class="client-logo-name">BeeLine</span></div>
-    <div class="client-logo rv d4"><span class="client-logo-name">6th Street</span></div>
-    <div class="client-logo rv"><span class="client-logo-name">ATTA BASES</span></div>
-    <div class="client-logo rv d1"><span class="client-logo-name">مطعم سلوى</span></div>
-    <div class="client-logo rv d2"><span class="client-logo-name">GamaVisa</span></div>
-    <div class="client-logo rv d3"><span class="client-logo-name">Zestaritty</span></div>
-    <div class="client-logo rv d4"><span class="client-logo-name">Syrup</span></div>
+<!-- CLIENTS MARQUEE -->
+<div class="clients-marquee">
+  <div class="clients-track">
+    <div class="cl-item">الشركة السعودية للكهرباء<span class="cl-dot"></span></div>
+    <div class="cl-item">وزارة العدل<span class="cl-dot"></span></div>
+    <div class="cl-item">اتحاد الغرف التجارية<span class="cl-dot"></span></div>
+    <div class="cl-item">يونيكوم<span class="cl-dot"></span></div>
+    <div class="cl-item">Palme D'Or<span class="cl-dot"></span></div>
+    <div class="cl-item">إجارة للتمويل<span class="cl-dot"></span></div>
+    <div class="cl-item">Arco Valley<span class="cl-dot"></span></div>
+    <div class="cl-item">VACA Burger<span class="cl-dot"></span></div>
+    <div class="cl-item">BeeLine<span class="cl-dot"></span></div>
+    <div class="cl-item">6th Street<span class="cl-dot"></span></div>
+    <div class="cl-item">ATTA BASES<span class="cl-dot"></span></div>
+    <div class="cl-item">مطعم سلوى<span class="cl-dot"></span></div>
+    <div class="cl-item">GamaVisa<span class="cl-dot"></span></div>
+    <div class="cl-item">Zestaritty<span class="cl-dot"></span></div>
+    <div class="cl-item">Syrup<span class="cl-dot"></span></div>
+    <!-- duplicate for seamless loop -->
+    <div class="cl-item">الشركة السعودية للكهرباء<span class="cl-dot"></span></div>
+    <div class="cl-item">وزارة العدل<span class="cl-dot"></span></div>
+    <div class="cl-item">اتحاد الغرف التجارية<span class="cl-dot"></span></div>
+    <div class="cl-item">يونيكوم<span class="cl-dot"></span></div>
+    <div class="cl-item">Palme D'Or<span class="cl-dot"></span></div>
+    <div class="cl-item">إجارة للتمويل<span class="cl-dot"></span></div>
+    <div class="cl-item">Arco Valley<span class="cl-dot"></span></div>
+    <div class="cl-item">VACA Burger<span class="cl-dot"></span></div>
+    <div class="cl-item">BeeLine<span class="cl-dot"></span></div>
+    <div class="cl-item">6th Street<span class="cl-dot"></span></div>
+    <div class="cl-item">ATTA BASES<span class="cl-dot"></span></div>
+    <div class="cl-item">مطعم سلوى<span class="cl-dot"></span></div>
+    <div class="cl-item">GamaVisa<span class="cl-dot"></span></div>
+    <div class="cl-item">Zestaritty<span class="cl-dot"></span></div>
+    <div class="cl-item">Syrup<span class="cl-dot"></span></div>
   </div>
-</section>
+</div>
 
 <!-- PHILOSOPHY -->
 <section class="philosophy">
-  <div class="phil-bg" data-ar="البساطة" data-en="Simplicity">البساطة</div>
-  <p class="phil-q rv" data-ar-html="<em>البساطة</em><br>هي المفتاح_" data-en-html="<em>Simplicity</em><br>is the Key_"><em>البساطة</em><br>هي المفتاح_</p>
-  <div class="phil-attr rv d1" data-ar="فلسفة AY. Design" data-en="AY. Design Philosophy">فلسفة AY. Design</div>
+  <div class="phil-bg" data-ar="الإبداع" data-en="Creativity">الإبداع</div>
+  <p class="phil-q rv" data-ar-html="<em>نصنع</em> تصاميم<br>ترتقي بعلامتك_" data-en-html="We craft designs<br>that <em>elevate</em> your brand_"><em>نصنع</em> تصاميم<br>ترتقي بعلامتك_</p>
+  <div class="phil-attr rv d1" data-ar="فلسفتنا في التصميم" data-en="Our Design Philosophy">فلسفتنا في التصميم</div>
 </section>
 
 <!-- SERVICES -->
@@ -489,7 +499,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
   <div>
     <div class="contact-eye rv" data-ar="تواصل معنا" data-en="Get In Touch">تواصل معنا</div>
     <h2 class="contact-h rv d1" data-ar-html="ابدأ<br><em>مشروعك</em>" data-en-html="Start a<br><em>Project</em>">ابدأ<br><em>مشروعك</em></h2>
-    <p class="contact-p rv d2" data-ar="سواء كانت هوية بصرية كاملة، أو حملة سوشيال ميديا، أو مطبوعات — خلنا نصنع شي مميز مع بعض." data-en="Whether it's a full brand identity, social media strategy, or print campaign — let's create something memorable together.">سواء كانت هوية بصرية كاملة، أو حملة سوشيال ميديا، أو مطبوعات — خلنا نصنع شي مميز مع بعض.</p>
+    <p class="contact-p rv d2" data-ar="جاهزين نحوّل فكرتك إلى هوية بصرية تتكلم عنك. ابدأ الخطوة الأولى وتواصل معنا الحين." data-en="Ready to turn your idea into a visual identity that speaks for you. Take the first step and get in touch now.">جاهزين نحوّل فكرتك إلى هوية بصرية تتكلم عنك. ابدأ الخطوة الأولى وتواصل معنا الحين.</p>
   </div>
   <div class="rv d1">
     <form class="contact-form" id="contactForm" action="https://formsubmit.co/aydesignweb@gmail.com" method="POST">
