@@ -88,7 +88,14 @@
   "inLanguage": ["ar", "en"]
 }
 </script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+
+<!-- Fonts (preconnect + preload for speed) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@100;200;300;400&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@100;200;300;400&display=swap" rel="stylesheet">
 <style>
 :root{--black:#0a0a0a;--white:#f5f5f3;--gray:#e8e8e6;--mid:#9a9a9a;--red:#c0392b;}
@@ -366,8 +373,8 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
     <li><a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
     <li><a href="#articles" data-ar="مقالات" data-en="Articles">مقالات</a></li>
     <li><a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a></li>
-    <li><button id="langToggle" class="lang-btn">EN</button></li>
   </ul>
+  <button id="langToggle" class="lang-btn">EN</button>
 </nav>
 
 <!-- HERO -->
@@ -594,7 +601,6 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
 
   </div>
 </section>
-</section>
 
 <!-- ARTICLES -->
 <section id="articles" class="articles-section">
@@ -610,7 +616,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
       <div class="article-cat" data-ar="هوية بصرية" data-en="Brand Identity">هوية بصرية</div>
       <h3 class="article-title" data-ar="كيف تبني هوية بصرية تدوم لعقود؟" data-en="How to Build a Brand Identity That Lasts Decades">كيف تبني هوية بصرية تدوم لعقود؟</h3>
       <p class="article-excerpt" data-ar="الهوية البصرية أكثر من مجرد شعار؛ هي روح العلامة التجارية ولغتها البصرية. نستعرض العناصر الأساسية لبناء هوية راسخة." data-en="Brand identity is more than a logo; it's the soul and visual language of a brand. We explore the core elements of a lasting identity.">الهوية البصرية أكثر من مجرد شعار؛ هي روح العلامة التجارية ولغتها البصرية. نستعرض العناصر الأساسية لبناء هوية راسخة.</p>
-      <span class="article-read" data-ar="اقرأ المزيد ←" data-en="Read More →">اقرأ المزيد ←</span>
+      <a href="articles/brand-identity.html" class="article-read" onclick="event.stopPropagation()" data-ar="اقرأ المقالة كاملة ←" data-en="Read Full Article →">اقرأ المقالة كاملة ←</a>
       <div class="article-content" data-ar-html="<p><strong>1. البحث والاستراتيجية:</strong> قبل رسم أي خط، نفهم جمهورك، منافسيك، وقيم علامتك. الهوية الناجحة مبنية على أساس استراتيجي قوي لا على ذوق لحظي.</p><p><strong>2. الشعار:</strong> رمز مكثف يختصر القصة. يجب أن يكون بسيطاً، قابلاً للتوسع، ومميزاً على كل الأحجام والخلفيات.</p><p><strong>3. نظام الألوان:</strong> الألوان تحمل معاني نفسية وثقافية. نختار لوحة ألوان تعكس شخصية العلامة وتميّزها عن المنافسين.</p><p><strong>4. الخطوط:</strong> الطباعة هي صوت العلامة المكتوب. نختار خطوطاً عربية وإنجليزية متناسقة تدعم هوية المشروع.</p><p><strong>5. دليل الاستخدام (Brand Guidelines):</strong> وثيقة شاملة تضمن تطبيقاً موحداً للهوية عبر كل نقاط التواصل — من الموقع إلى كرت الأعمال.</p><p>في AY. Design نبني هويات لا تشيخ؛ هويات تحكي قصة، وتبني ثقة، وتبقى ذات صلة لسنوات طويلة.</p>" data-en-html="<p><strong>1. Research & Strategy:</strong> Before drawing a line, we study your audience, competitors, and brand values. A successful identity is built on strategy, not momentary taste.</p><p><strong>2. The Logo:</strong> A condensed symbol that tells a story — simple, scalable, and distinctive at any size.</p><p><strong>3. Color System:</strong> Colors carry psychological and cultural meaning. We pick palettes that reflect brand personality and stand out.</p><p><strong>4. Typography:</strong> Type is the written voice of a brand. We pair Arabic and English fonts that support the project's identity.</p><p><strong>5. Brand Guidelines:</strong> A full document ensuring consistent application across every touchpoint — from web to business card.</p><p>At AY. Design we build timeless identities — ones that tell a story, build trust, and stay relevant for years.</p>"></div>
     </article>
 
@@ -619,7 +625,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
       <div class="article-cat" data-ar="سوشيال ميديا" data-en="Social Media">سوشيال ميديا</div>
       <h3 class="article-title" data-ar="سر التصميم الذي يوقف السكرول" data-en="The Secret of Scroll-Stopping Design">سر التصميم الذي يوقف السكرول</h3>
       <p class="article-excerpt" data-ar="في عصر المحتوى اللامحدود، أصبح جذب الانتباه في أقل من ثانيتين هو الفيصل. كيف نصمم محتوى يوقف الإبهام؟" data-en="In an era of infinite content, grabbing attention in under two seconds is the tipping point. How do we craft scroll-stopping visuals?">في عصر المحتوى اللامحدود، أصبح جذب الانتباه في أقل من ثانيتين هو الفيصل. كيف نصمم محتوى يوقف الإبهام؟</p>
-      <span class="article-read" data-ar="اقرأ المزيد ←" data-en="Read More →">اقرأ المزيد ←</span>
+      <a href="articles/social-media-design.html" class="article-read" onclick="event.stopPropagation()" data-ar="اقرأ المقالة كاملة ←" data-en="Read Full Article →">اقرأ المقالة كاملة ←</a>
       <div class="article-content" data-ar-html="<p><strong>1. التباين البصري:</strong> الدماغ البشري مبرمج للانتباه للاختلاف. استخدام تباين قوي في الألوان، الأحجام، والمسافات البيضاء يصنع فرقاً.</p><p><strong>2. قاعدة الثانيتين:</strong> إذا لم يفهم المتابع رسالتك خلال ثانيتين، فقدتَه. البساطة والوضوح أهم من الزخرفة.</p><p><strong>3. التنسيق مع الهوية:</strong> كل منشور يجب أن يكون امتداداً طبيعياً للهوية البصرية. الاتساق يبني التذكر.</p><p><strong>4. السرد البصري:</strong> لا نصمم منشوراً واحداً، بل نصمم رحلة محتوى. كل بوست جزء من قصة العلامة.</p><p><strong>5. بيانات المنصة:</strong> نحلل أداء كل منشور ونطوّر التصاميم بناءً على ما يعمل فعلاً، لا على افتراضات.</p>" data-en-html="<p><strong>1. Visual Contrast:</strong> The human brain is wired to notice difference. Strong contrast in color, size, and whitespace makes the cut.</p><p><strong>2. The 2-Second Rule:</strong> If your audience can't grasp the message in 2 seconds, you've lost them. Clarity beats ornament.</p><p><strong>3. Identity Alignment:</strong> Every post must be a natural extension of the brand. Consistency builds recall.</p><p><strong>4. Visual Storytelling:</strong> We don't design a single post — we design a content journey. Every post is a chapter.</p><p><strong>5. Platform Data:</strong> We analyze post performance and iterate based on what actually works, not assumptions.</p>"></div>
     </article>
 
@@ -628,7 +634,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
       <div class="article-cat" data-ar="ذكاء اصطناعي" data-en="AI Design">ذكاء اصطناعي</div>
       <h3 class="article-title" data-ar="الذكاء الاصطناعي في التصميم: شريك لا بديل" data-en="AI in Design: A Partner, Not a Replacement">الذكاء الاصطناعي في التصميم: شريك لا بديل</h3>
       <p class="article-excerpt" data-ar="كيف نستخدم Midjourney و Firefly و DALL·E لتسريع الإبداع بدون التضحية بالهوية البشرية للتصميم؟" data-en="How we use Midjourney, Firefly & DALL·E to accelerate creativity without sacrificing the human soul of design.">كيف نستخدم Midjourney و Firefly و DALL·E لتسريع الإبداع بدون التضحية بالهوية البشرية للتصميم؟</p>
-      <span class="article-read" data-ar="اقرأ المزيد ←" data-en="Read More →">اقرأ المزيد ←</span>
+      <a href="articles/ai-design.html" class="article-read" onclick="event.stopPropagation()" data-ar="اقرأ المقالة كاملة ←" data-en="Read Full Article →">اقرأ المقالة كاملة ←</a>
       <div class="article-content" data-ar-html="<p><strong>العصف الذهني بسرعة الضوء:</strong> نستخدم الذكاء الاصطناعي لتوليد عشرات الاتجاهات البصرية خلال دقائق، مما يوسع مساحة الإبداع قبل اختيار المسار النهائي.</p><p><strong>Moodboards ذكية:</strong> نبني لوحات إلهام مخصصة لكل مشروع باستخدام AI، تعطي العميل رؤية واضحة قبل بدء التنفيذ.</p><p><strong>التخصيص الضخم:</strong> لحملات السوشيال ميديا الكبيرة، نولّد عشرات الأصول المتسقة بصرياً بجودة ثابتة.</p><p><strong>الإخراج الفني:</strong> Firefly و Photoshop AI يساعداننا في التلاعب بالصور، إزالة الخلفيات، وتوسيع اللوحات دون فقدان الجودة.</p><p><strong>لكن... الإنسان هو القائد:</strong> AI أداة قوية، لكن القرارات الاستراتيجية، الذوق الفني، وفهم السياق الثقافي — تبقى مسؤولية المصمم البشري. نحن نقود، والآلة تنفّذ.</p>" data-en-html="<p><strong>Brainstorming at Light Speed:</strong> We use AI to generate dozens of visual directions in minutes, expanding creative space before locking a final path.</p><p><strong>Smart Moodboards:</strong> Custom inspiration boards per project, giving clients clarity before execution starts.</p><p><strong>Mass Customization:</strong> For large social campaigns, we generate dozens of visually consistent assets at stable quality.</p><p><strong>Art Direction:</strong> Firefly and Photoshop AI help with image manipulation, background removal, and canvas extension without quality loss.</p><p><strong>But... Humans Lead:</strong> AI is a powerful tool, but strategic decisions, taste, and cultural context remain the human designer's responsibility. We lead, the machine executes.</p>"></div>
     </article>
 
@@ -637,7 +643,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
       <div class="article-cat" data-ar="مطبوعات" data-en="Print">مطبوعات</div>
       <h3 class="article-title" data-ar="لماذا لا تزال المطبوعات تهم في عصر رقمي؟" data-en="Why Print Still Matters in a Digital Age">لماذا لا تزال المطبوعات تهم في عصر رقمي؟</h3>
       <p class="article-excerpt" data-ar="في عالم الشاشات، أصبح التصميم الملموس أقوى وأندر. كتالوج مصقول يترك انطباعاً لا يستطيع بريد إلكتروني منافسته." data-en="In a world of screens, tangible design is more powerful and rarer. A polished catalog leaves an impression no email can match.">في عالم الشاشات، أصبح التصميم الملموس أقوى وأندر. كتالوج مصقول يترك انطباعاً لا يستطيع بريد إلكتروني منافسته.</p>
-      <span class="article-read" data-ar="اقرأ المزيد ←" data-en="Read More →">اقرأ المزيد ←</span>
+      <a href="articles/print-design.html" class="article-read" onclick="event.stopPropagation()" data-ar="اقرأ المقالة كاملة ←" data-en="Read Full Article →">اقرأ المقالة كاملة ←</a>
       <div class="article-content" data-ar-html="<p><strong>التجربة الحسية:</strong> الملمس، الوزن، رائحة الحبر — كلها عناصر تبني علاقة عاطفية بين العميل والعلامة التجارية لا يمكن للبكسل أن يحققها.</p><p><strong>المصداقية والثقل:</strong> البروشور المطبوع بجودة عالية يعكس جدية العلامة ويوحي بالاستقرار والثقة.</p><p><strong>اختيار الخامات:</strong> من الورق المصقول إلى الكرافت الخام، كل خامة تحكي قصة مختلفة. نساعد عملاءنا في اختيار الخامة التي تعكس روح مشروعهم.</p><p><strong>التقنيات الخاصة:</strong> فويل ذهبي، طباعة بارزة، قص بالليزر — تفاصيل تحوّل المطبوع من ورقة إلى قطعة فنية.</p><p><strong>رابّ السيارات:</strong> إعلان متحرك مجاني 24/7. نصمم رابّ سيارات يخطف الأنظار في الشوارع.</p>" data-en-html="<p><strong>Sensory Experience:</strong> Texture, weight, ink scent — elements that build emotional connection no pixel can replicate.</p><p><strong>Credibility & Weight:</strong> A high-quality printed brochure signals brand seriousness and trust.</p><p><strong>Material Selection:</strong> From glossy paper to raw kraft, every material tells a different story. We help clients pick what reflects their project's soul.</p><p><strong>Special Techniques:</strong> Gold foil, embossing, laser cutting — details that turn print into art.</p><p><strong>Vehicle Wraps:</strong> Free moving advertising 24/7. We design vehicle wraps that turn heads.</p>"></div>
     </article>
 
@@ -646,7 +652,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
       <div class="article-cat" data-ar="عروض تقديمية" data-en="Presentations">عروض تقديمية</div>
       <h3 class="article-title" data-ar="عرض تقديمي يقنع بدلاً من يُقرأ" data-en="A Presentation That Convinces, Not Just Reads">عرض تقديمي يقنع بدلاً من يُقرأ</h3>
       <p class="article-excerpt" data-ar="أغلب العروض التقديمية فاشلة لأنها مكدسة بالنصوص. كيف نصمم عرضاً يحرّك الجمهور ويغلق الصفقات؟" data-en="Most presentations fail because they're text-stuffed. How do we design decks that move audiences and close deals?">أغلب العروض التقديمية فاشلة لأنها مكدسة بالنصوص. كيف نصمم عرضاً يحرّك الجمهور ويغلق الصفقات؟</p>
-      <span class="article-read" data-ar="اقرأ المزيد ←" data-en="Read More →">اقرأ المزيد ←</span>
+      <a href="articles/presentation-design.html" class="article-read" onclick="event.stopPropagation()" data-ar="اقرأ المقالة كاملة ←" data-en="Read Full Article →">اقرأ المقالة كاملة ←</a>
       <div class="article-content" data-ar-html="<p><strong>فكرة واحدة لكل شريحة:</strong> القاعدة الذهبية. إذا كانت الشريحة تحوي فكرتين، قسّمها.</p><p><strong>البيانات تحكي قصة:</strong> لا نرمي أرقاماً، بل نحوّلها إلى رسوم بيانية بسيطة توصل الخلاصة في ثانيتين.</p><p><strong>الإيقاع البصري:</strong> تنويع الشرائح (عنوان كبير، صورة كاملة، بيانات، اقتباس) يحافظ على انتباه الجمهور من أول دقيقة لآخر ثانية.</p><p><strong>الهوية الموحدة:</strong> العرض امتداد للعلامة. نستخدم نفس الألوان والخطوط لبناء ثقة بصرية.</p><p><strong>أقل كلام، أكثر تأثير:</strong> العرض ليس تقريراً. هو أداة دعم للمتحدث. الشرائح تلهم، والمتحدث يقنع.</p>" data-en-html="<p><strong>One Idea Per Slide:</strong> The golden rule. If a slide has two ideas, split it.</p><p><strong>Data Tells a Story:</strong> We don't dump numbers; we turn them into simple charts that deliver the takeaway in seconds.</p><p><strong>Visual Rhythm:</strong> Slide variation (big title, full image, data, quote) keeps audiences hooked from minute one.</p><p><strong>Unified Identity:</strong> The deck is a brand extension. Same colors, same fonts — same visual trust.</p><p><strong>Less Text, More Impact:</strong> A presentation isn't a report. It supports the speaker. Slides inspire; the speaker persuades.</p>"></div>
     </article>
 
@@ -655,7 +661,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
       <div class="article-cat" data-ar="عام" data-en="General">عام</div>
       <h3 class="article-title" data-ar="كيف تختار استوديو تصميم مناسب لمشروعك؟" data-en="How to Pick the Right Design Studio for Your Project">كيف تختار استوديو تصميم مناسب لمشروعك؟</h3>
       <p class="article-excerpt" data-ar="قرار اختيار مصمم يحدد مصير مشروعك البصري لسنوات. خمسة معايير تساعدك تميّز بين الاستوديو الاحترافي والهاوي." data-en="Choosing a designer shapes your project's visual fate for years. Five criteria to separate pro studios from amateurs.">قرار اختيار مصمم يحدد مصير مشروعك البصري لسنوات. خمسة معايير تساعدك تميّز بين الاستوديو الاحترافي والهاوي.</p>
-      <span class="article-read" data-ar="اقرأ المزيد ←" data-en="Read More →">اقرأ المزيد ←</span>
+      <a href="articles/choosing-design-studio.html" class="article-read" onclick="event.stopPropagation()" data-ar="اقرأ المقالة كاملة ←" data-en="Read Full Article →">اقرأ المقالة كاملة ←</a>
       <div class="article-content" data-ar-html="<p><strong>1. البورتفوليو الحقيقي:</strong> لا تنبهر بعدد الأعمال، بل بعمقها. هل هناك حالات دراسة (Case Studies) توضح التفكير خلف التصميم؟</p><p><strong>2. العملية لا النتيجة فقط:</strong> الاستوديو الجاد يشرح لك منهجيته — من البحث إلى التسليم. الفوضى في العملية = فوضى في النتيجة.</p><p><strong>3. السؤال قبل التصميم:</strong> المصمم الاحترافي يسألك عشرات الأسئلة قبل أن يرسم خطاً. الهاوي يبدأ فوتوشوب من أول لقاء.</p><p><strong>4. المراجعات والتعديلات:</strong> استوديو جاد لديه سياسة واضحة للتعديلات. لا وعود مفتوحة، ولا تشدد مبالغ فيه.</p><p><strong>5. الكيمياء البشرية:</strong> ستعمل مع هذا الاستوديو لأسابيع أو شهور. إذا لم ترتح في الاجتماع الأول، لن ترتاح لاحقاً.</p><p>في AY. Design نضع هذه المعايير في صميم عملنا. اتصل بنا لنبدأ محادثة حقيقية عن مشروعك.</p>" data-en-html="<p><strong>1. A Real Portfolio:</strong> Don't be dazzled by quantity — look for depth. Are there case studies explaining the thinking behind the work?</p><p><strong>2. Process Over Output:</strong> Serious studios explain their method — research to delivery. Chaos in process = chaos in result.</p><p><strong>3. Questions Before Design:</strong> A pro asks dozens of questions before drawing a line. Amateurs open Photoshop on day one.</p><p><strong>4. Revisions Policy:</strong> A serious studio has clear revision terms. No open promises, no over-restriction.</p><p><strong>5. Human Chemistry:</strong> You'll work with this studio for weeks or months. If the first meeting feels off, it won't get better.</p><p>At AY. Design, these criteria sit at the core of how we work. Reach out for a real conversation about your project.</p>"></div>
     </article>
 
@@ -691,6 +697,59 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
       </div>
       <button type="submit" class="form-submit" data-ar="أرسل الرسالة" data-en="Send Message">أرسل الرسالة</button>
     </form>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="process-section">
+  <p class="sub-title rv" data-ar="الطريقة" data-en="The Method">الطريقة</p>
+  <h2 class="section-title rv" data-ar="كيف نشتغل" data-en="How We Work">كيف نشتغل</h2>
+  <div class="process-grid">
+    <div class="process-step rv">
+      <p class="step-num" data-ar="01 — الاكتشاف" data-en="01 — Discovery">01 — الاكتشاف</p>
+      <p class="step-title" data-ar="الفهم" data-en="Understanding">الفهم</p>
+      <p class="step-desc" data-ar="نبدأ بفهم علامتك التجارية، جمهورك، وأهدافك قبل أي قلم على ورق." data-en="We start by understanding your brand, audience, and goals before any pen hits paper.">نبدأ بفهم علامتك التجارية، جمهورك، وأهدافك قبل أي قلم على ورق.</p>
+    </div>
+    <div class="process-step rv d1">
+      <p class="step-num" data-ar="02 — التخطيط" data-en="02 — Strategy">02 — التخطيط</p>
+      <p class="step-title" data-ar="الاستراتيجية" data-en="Strategy">الاستراتيجية</p>
+      <p class="step-desc" data-ar="نبني مسار بصري واضح يعكس شخصيتك ويميّزك عن المنافسين." data-en="We build a clear visual path that reflects your personality and sets you apart.">نبني مسار بصري واضح يعكس شخصيتك ويميّزك عن المنافسين.</p>
+    </div>
+    <div class="process-step rv d2">
+      <p class="step-num" data-ar="03 — التصميم" data-en="03 — Design">03 — التصميم</p>
+      <p class="step-title" data-ar="التصميم" data-en="Design">التصميم</p>
+      <p class="step-desc" data-ar="نُنتج تصاميم دقيقة ومتكاملة — من الشعار للمطبوعات للسوشيال." data-en="We produce precise, cohesive designs — from logos to print to social media.">نُنتج تصاميم دقيقة ومتكاملة — من الشعار للمطبوعات للسوشيال.</p>
+    </div>
+    <div class="process-step rv d3">
+      <p class="step-num" data-ar="04 — التسليم" data-en="04 — Deliver">04 — التسليم</p>
+      <p class="step-title" data-ar="التسليم" data-en="Delivery">التسليم</p>
+      <p class="step-desc" data-ar="ملفات جاهزة بكل الصيغ، مع دليل هوية بصرية كامل." data-en="Ready files in all formats, with a complete brand identity guide.">ملفات جاهزة بكل الصيغ، مع دليل هوية بصرية كامل.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <p class="sub-title rv" data-ar="ماذا قالوا" data-en="What They Said">ماذا قالوا</p>
+    <h2 class="section-title rv" data-ar="آراء العملاء" data-en="Client Reviews">آراء العملاء</h2>
+    <div class="testi-grid">
+      <div class="testi-card rv">
+        <p class="testi-text">"AY. Design حوّل هوية علامتنا التجارية بالكامل. التصميم احترافي ويعكس شخصيتنا تماماً."</p>
+        <p class="testi-author">محمد العتيبي</p>
+        <p class="testi-role">مدير تسويق — شركة رائدة</p>
+      </div>
+      <div class="testi-card rv d1">
+        <p class="testi-text">"سرعة في التنفيذ، دقة في التفاصيل، وإبداع لا يتوقف. أنصح بالتعامل مع AY. Design بشدة."</p>
+        <p class="testi-author">نورا الشمري</p>
+        <p class="testi-role">مؤسسة علامة تجارية</p>
+      </div>
+      <div class="testi-card rv d2">
+        <p class="testi-text">"من أفضل التجارب في مجال الجرافيك. الفهم العميق للهوية البصرية يجعل الفرق واضحاً."</p>
+        <p class="testi-author">خالد الدوسري</p>
+        <p class="testi-role">رئيس تنفيذي</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -899,59 +958,6 @@ document.querySelectorAll(".ftab").forEach(tab=>{
   margin-top: 4px;
 }
 </style>
-
-<!-- Process Section -->
-<section class="process-section">
-  <p class="sub-title rv" data-ar="الطريقة" data-en="The Method">الطريقة</p>
-  <h2 class="section-title rv" data-ar="كيف نشتغل" data-en="How We Work">كيف نشتغل</h2>
-  <div class="process-grid">
-    <div class="process-step rv">
-      <p class="step-num" data-ar="01 — الاكتشاف" data-en="01 — Discovery">01 — الاكتشاف</p>
-      <p class="step-title" data-ar="الفهم" data-en="Understanding">الفهم</p>
-      <p class="step-desc" data-ar="نبدأ بفهم علامتك التجارية، جمهورك، وأهدافك قبل أي قلم على ورق." data-en="We start by understanding your brand, audience, and goals before any pen hits paper.">نبدأ بفهم علامتك التجارية، جمهورك، وأهدافك قبل أي قلم على ورق.</p>
-    </div>
-    <div class="process-step rv d1">
-      <p class="step-num" data-ar="02 — التخطيط" data-en="02 — Strategy">02 — التخطيط</p>
-      <p class="step-title" data-ar="الاستراتيجية" data-en="Strategy">الاستراتيجية</p>
-      <p class="step-desc" data-ar="نبني مسار بصري واضح يعكس شخصيتك ويميّزك عن المنافسين." data-en="We build a clear visual path that reflects your personality and sets you apart.">نبني مسار بصري واضح يعكس شخصيتك ويميّزك عن المنافسين.</p>
-    </div>
-    <div class="process-step rv d2">
-      <p class="step-num" data-ar="03 — التصميم" data-en="03 — Design">03 — التصميم</p>
-      <p class="step-title" data-ar="التصميم" data-en="Design">التصميم</p>
-      <p class="step-desc" data-ar="نُنتج تصاميم دقيقة ومتكاملة — من الشعار للمطبوعات للسوشيال." data-en="We produce precise, cohesive designs — from logos to print to social media.">نُنتج تصاميم دقيقة ومتكاملة — من الشعار للمطبوعات للسوشيال.</p>
-    </div>
-    <div class="process-step rv d3">
-      <p class="step-num" data-ar="04 — التسليم" data-en="04 — Deliver">04 — التسليم</p>
-      <p class="step-title" data-ar="التسليم" data-en="Delivery">التسليم</p>
-      <p class="step-desc" data-ar="ملفات جاهزة بكل الصيغ، مع دليل هوية بصرية كامل." data-en="Ready files in all formats, with a complete brand identity guide.">ملفات جاهزة بكل الصيغ، مع دليل هوية بصرية كامل.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials -->
-<section class="testimonials-section">
-  <div class="testimonials-inner">
-    <p class="sub-title rv" data-ar="ماذا قالوا" data-en="What They Said">ماذا قالوا</p>
-    <h2 class="section-title rv" data-ar="آراء العملاء" data-en="Client Reviews">آراء العملاء</h2>
-    <div class="testi-grid">
-      <div class="testi-card rv">
-        <p class="testi-text">"AY. Design حوّل هوية علامتنا التجارية بالكامل. التصميم احترافي ويعكس شخصيتنا تماماً."</p>
-        <p class="testi-author">محمد العتيبي</p>
-        <p class="testi-role">مدير تسويق — شركة رائدة</p>
-      </div>
-      <div class="testi-card rv d1">
-        <p class="testi-text">"سرعة في التنفيذ، دقة في التفاصيل، وإبداع لا يتوقف. أنصح بالتعامل مع AY. Design بشدة."</p>
-        <p class="testi-author">نورا الشمري</p>
-        <p class="testi-role">مؤسسة علامة تجارية</p>
-      </div>
-      <div class="testi-card rv d2">
-        <p class="testi-text">"من أفضل التجارب في مجال الجرافيك. الفهم العميق للهوية البصرية يجعل الفرق واضحاً."</p>
-        <p class="testi-author">خالد الدوسري</p>
-        <p class="testi-role">رئيس تنفيذي</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- WHATSAPP FLOAT BUTTON -->
 <a href="https://wa.me/966595074317" class="wa-float" target="_blank" aria-label="WhatsApp">
