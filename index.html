@@ -201,18 +201,20 @@ body{direction:rtl;text-align:right;}
 .articles-title{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6vw,90px);font-weight:300;line-height:.95;letter-spacing:-3px;color:var(--black);}
 .articles-title em{font-style:italic;font-weight:300;color:var(--red);}
 .articles-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
-.article-card{background:var(--white);border:1px solid #e5e5e3;padding:44px 36px;cursor:pointer;transition:all .4s cubic-bezier(.19,1,.22,1);position:relative;overflow:hidden;}
+.article-card-img{width:100%;height:200px;object-fit:cover;margin-bottom:24px;filter:brightness(.88);transition:filter .4s;}
+.article-card:hover .article-card-img{filter:brightness(1);}
+.article-card{background:var(--white);border:1px solid #e5e5e3;padding:0 0 36px;overflow:hidden;cursor:pointer;transition:all .4s cubic-bezier(.19,1,.22,1);position:relative;overflow:hidden;}
 .article-card::before{content:'';position:absolute;top:0;right:0;width:0;height:2px;background:var(--red);transition:width .5s ease;}
 .article-card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -20px rgba(0,0,0,.15);border-color:var(--black);}
 .article-card:hover::before{width:100%;}
 .article-num{font-family:'Cormorant Garamond',serif;font-size:70px;font-weight:300;line-height:1;color:rgba(10,10,10,.08);position:absolute;top:20px;left:24px;transition:color .4s;}
 .article-card:hover .article-num{color:rgba(192,57,43,.2);}
-.article-cat{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:18px;position:relative;z-index:2;}
-.article-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;line-height:1.25;color:var(--black);margin-bottom:14px;position:relative;z-index:2;}
-.article-excerpt{font-size:13px;line-height:1.75;color:#555;font-weight:300;margin-bottom:24px;position:relative;z-index:2;}
-.article-read{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--black);display:inline-flex;align-items:center;gap:8px;position:relative;z-index:2;border-bottom:1px solid var(--black);padding-bottom:2px;transition:gap .3s;}
+.article-cat{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:18px;padding:0 36px;position:relative;z-index:2;}
+.article-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;line-height:1.25;color:var(--black);margin-bottom:14px;padding:0 36px;position:relative;z-index:2;}
+.article-excerpt{font-size:13px;line-height:1.75;color:#555;font-weight:300;margin-bottom:24px;padding:0 36px;position:relative;z-index:2;}
+.article-read{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--black);display:inline-flex;align-items:center;gap:8px;position:relative;z-index:2;border-bottom:1px solid var(--black);padding-bottom:2px;transition:gap .3s;margin:0 36px;}
 .article-card:hover .article-read{gap:14px;}
-.article-content{display:none;padding:30px 0 10px;border-top:1px solid #e5e5e3;margin-top:24px;font-size:13px;line-height:1.9;color:#444;font-weight:300;position:relative;z-index:2;}
+.article-content{display:none;padding:30px 36px 10px;border-top:1px solid #e5e5e3;margin-top:24px;font-size:13px;line-height:1.9;color:#444;font-weight:300;position:relative;z-index:2;}
 .article-card.open .article-content{display:block;animation:fadeIn .4s ease;}
 .article-content p{margin-bottom:14px;}
 .article-content strong{color:var(--black);font-weight:500;}
@@ -616,6 +618,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
   <div class="articles-grid">
 
     <article class="article-card rv" onclick="this.classList.toggle('open')">
+      <img class="article-card-img" src="https://images.pexels.com/photos/7598017/pexels-photo-7598017.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Brand identity" loading="lazy" width="600" height="200">
       <div class="article-num">01</div>
       <div class="article-cat" data-ar="هوية بصرية" data-en="Brand Identity">هوية بصرية</div>
       <h3 class="article-title" data-ar="كيف تبني هوية بصرية تدوم لعقود؟" data-en="How to Build a Brand Identity That Lasts Decades">كيف تبني هوية بصرية تدوم لعقود؟</h3>
@@ -625,6 +628,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
     </article>
 
     <article class="article-card rv d1" onclick="this.classList.toggle('open')">
+      <img class="article-card-img" src="https://images.pexels.com/photos/6956303/pexels-photo-6956303.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Social media design" loading="lazy" width="600" height="200">
       <div class="article-num">02</div>
       <div class="article-cat" data-ar="سوشيال ميديا" data-en="Social Media">سوشيال ميديا</div>
       <h3 class="article-title" data-ar="سر التصميم الذي يوقف السكرول" data-en="The Secret of Scroll-Stopping Design">سر التصميم الذي يوقف السكرول</h3>
@@ -634,6 +638,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
     </article>
 
     <article class="article-card rv d2" onclick="this.classList.toggle('open')">
+      <img class="article-card-img" src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600" alt="AI design" loading="lazy" width="600" height="200">
       <div class="article-num">03</div>
       <div class="article-cat" data-ar="ذكاء اصطناعي" data-en="AI Design">ذكاء اصطناعي</div>
       <h3 class="article-title" data-ar="الذكاء الاصطناعي في التصميم: شريك لا بديل" data-en="AI in Design: A Partner, Not a Replacement">الذكاء الاصطناعي في التصميم: شريك لا بديل</h3>
@@ -643,6 +648,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
     </article>
 
     <article class="article-card rv" onclick="this.classList.toggle('open')">
+      <img class="article-card-img" src="https://images.pexels.com/photos/2250136/pexels-photo-2250136.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Print design" loading="lazy" width="600" height="200">
       <div class="article-num">04</div>
       <div class="article-cat" data-ar="مطبوعات" data-en="Print">مطبوعات</div>
       <h3 class="article-title" data-ar="لماذا لا تزال المطبوعات تهم في عصر رقمي؟" data-en="Why Print Still Matters in a Digital Age">لماذا لا تزال المطبوعات تهم في عصر رقمي؟</h3>
@@ -652,6 +658,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
     </article>
 
     <article class="article-card rv d1" onclick="this.classList.toggle('open')">
+      <img class="article-card-img" src="https://images.pexels.com/photos/5716030/pexels-photo-5716030.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Presentation design" loading="lazy" width="600" height="200">
       <div class="article-num">05</div>
       <div class="article-cat" data-ar="عروض تقديمية" data-en="Presentations">عروض تقديمية</div>
       <h3 class="article-title" data-ar="عرض تقديمي يقنع بدلاً من يُقرأ" data-en="A Presentation That Convinces, Not Just Reads">عرض تقديمي يقنع بدلاً من يُقرأ</h3>
@@ -661,6 +668,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
     </article>
 
     <article class="article-card rv d2" onclick="this.classList.toggle('open')">
+      <img class="article-card-img" src="https://images.pexels.com/photos/7675029/pexels-photo-7675029.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Design studio" loading="lazy" width="600" height="200">
       <div class="article-num">06</div>
       <div class="article-cat" data-ar="عام" data-en="General">عام</div>
       <h3 class="article-title" data-ar="كيف تختار استوديو تصميم مناسب لمشروعك؟" data-en="How to Pick the Right Design Studio for Your Project">كيف تختار استوديو تصميم مناسب لمشروعك؟</h3>
