@@ -9,6 +9,10 @@
 <meta name="author" content="أيمن الأستاذ — AY. Design">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0a0a0a">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://images.pexels.com">
+<link rel="dns-prefetch" href="https://formsubmit.co">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
 <!-- Google Search Console verification -->
 <meta name="google-site-verification" content="DWHn6ulwiRC3thhaC4l3O5s4lleXy7evM_DqLHqolqE">
@@ -224,7 +228,7 @@ body{direction:rtl;text-align:right;}
 .services-dark{background:var(--black);padding:120px 60px;}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1a1a1a;margin-top:60px;}
 @media (max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr);}}
-.svc{background:var(--black);padding:50px 36px;position:relative;overflow:hidden;transition:background .4s;cursor:default;}
+.svc{background:var(--black);padding:50px 36px;position:relative;overflow:hidden;transition:background .4s;cursor:pointer;text-decoration:none;color:inherit;display:block;}
 .svc:hover{background:#111;}
 .svc-bg-n{position:absolute;top:10px;right:16px;font-family:'Cormorant Garamond',serif;font-size:90px;font-weight:300;color:rgba(255,255,255,0.04);line-height:1;transition:color .4s;}
 .svc:hover .svc-bg-n{color:rgba(255,255,255,.08);}
@@ -361,12 +365,13 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
 </style>
 </head>
 <body>
+<a href="#hero" class="skip-link" style="position:absolute;top:-100px;left:0;padding:10px;background:var(--black);color:var(--white);z-index:9999;font-size:14px;transition:top .2s;" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">تخطي إلى المحتوى</a>
 
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
 <!-- NAV -->
-<nav id="mainNav">
+<nav id="mainNav" role="navigation" aria-label="القائمة الرئيسية">
   <a href="#hero" class="logo-mark">
     <img src="ay-logo.png" alt="Ay Design" style="height:44px;width:auto;" />
   </a>
@@ -375,9 +380,10 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
     <li><a href="#work" data-ar="أعمالنا" data-en="Work">أعمالنا</a></li>
     <li><a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
     <li><a href="#articles" data-ar="مقالات" data-en="Articles">مقالات</a></li>
+    <li><a href="faq.html" data-ar="أسئلة شائعة" data-en="FAQ">أسئلة شائعة</a></li>
     <li><a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a></li>
   </ul>
-  <button id="langToggle" class="lang-btn">EN</button>
+  <button id="langToggle" class="lang-btn" aria-label="تبديل اللغة">EN</button>
 </nav>
 
 <!-- HERO -->
@@ -497,12 +503,12 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
 <section id="services" class="services-dark">
   <div class="section-tag rv" style="color:rgba(255,255,255,.35);" data-ar="خدماتنا" data-en="Services">خدماتنا</div>
   <div class="svc-grid rv d1">
-    <div class="svc"><div class="svc-bg-n">01</div><div class="svc-slash">/</div><div class="svc-n" data-ar="سوشيال ميديا" data-en="Social Media">سوشيال ميديا</div><div class="svc-d" data-ar="محتوى بصري استراتيجي لمنصات التواصل الاجتماعي يعزز التفاعل ويبني العلامات التجارية." data-en="Strategic visual content for Instagram, Facebook & platforms that drives engagement and builds brands.">محتوى بصري استراتيجي لمنصات التواصل الاجتماعي يعزز التفاعل ويبني العلامات التجارية.</div><div class="svc-arr">←</div></div>
-    <div class="svc"><div class="svc-bg-n">02</div><div class="svc-slash">/</div><div class="svc-n" data-ar="هوية بصرية" data-en="Branding">هوية بصرية</div><div class="svc-d" data-ar="أنظمة هوية متكاملة — شعارات، قرطاسية، أدلة العلامة التجارية، ولغة بصرية تدوم." data-en="Complete identity systems — logos, stationery, brand guides, and visual language that endures.">أنظمة هوية متكاملة — شعارات، قرطاسية، أدلة العلامة التجارية، ولغة بصرية تدوم.</div><div class="svc-arr">←</div></div>
-    <div class="svc"><div class="svc-bg-n">03</div><div class="svc-slash">/</div><div class="svc-n" data-ar="مطبوعات" data-en="Printing">مطبوعات</div><div class="svc-d" data-ar="بروشورات، كتالوجات، بانرات، رابّ سيارات، ومواد مطبوعة بدقة وحرفية." data-en="Brochures, catalogues, banners, vehicle wraps, and print collateral with precision and craft.">بروشورات، كتالوجات، بانرات، رابّ سيارات، ومواد مطبوعة بدقة وحرفية.</div><div class="svc-arr">←</div></div>
-    <div class="svc"><div class="svc-bg-n">04</div><div class="svc-slash">/</div><div class="svc-n" data-ar="عروض تقديمية" data-en="Presentations">عروض تقديمية</div><div class="svc-d" data-ar="عروض تقديمية بصرية مبنية على البيانات توصل الأفكار بوضوح وتأثير." data-en="Data-driven, visually compelling presentations that communicate ideas with clarity and impact.">عروض تقديمية بصرية مبنية على البيانات توصل الأفكار بوضوح وتأثير.</div><div class="svc-arr">←</div></div>
-    <div class="svc"><div class="svc-bg-n">05</div><div class="svc-slash">/</div><div class="svc-n" data-ar="تصميم بالذكاء الاصطناعي" data-en="AI Design">تصميم بالذكاء الاصطناعي</div><div class="svc-d" data-ar="نوظّف أحدث أدوات الذكاء الاصطناعي (Midjourney، DALL·E، Firefly) لإنتاج تصاميم مبتكرة بجودة احترافية وسرعة قياسية." data-en="We harness cutting-edge AI tools (Midjourney, DALL·E, Firefly) to craft innovative designs with pro quality and record speed.">نوظّف أحدث أدوات الذكاء الاصطناعي (Midjourney، DALL·E، Firefly) لإنتاج تصاميم مبتكرة بجودة احترافية وسرعة قياسية.</div><div class="svc-arr">←</div></div>
-    <div class="svc"><div class="svc-bg-n">06</div><div class="svc-slash">/</div><div class="svc-n" data-ar="تصميم مواقع إلكترونية" data-en="Web Design">تصميم مواقع إلكترونية</div><div class="svc-d" data-ar="تصميم وتطوير مواقع إلكترونية عصرية وسريعة — صفحات هبوط، بورتفوليو، ومتاجر إلكترونية متجاوبة مع جميع الأجهزة." data-en="Modern, fast website design & development — landing pages, portfolios, and responsive e-commerce sites across all devices.">تصميم وتطوير مواقع إلكترونية عصرية وسريعة — صفحات هبوط، بورتفوليو، ومتاجر إلكترونية متجاوبة مع جميع الأجهزة.</div><div class="svc-arr">←</div></div>
+    <a href="services/social-media.html" class="svc"><div class="svc-bg-n">01</div><div class="svc-slash">/</div><div class="svc-n" data-ar="سوشيال ميديا" data-en="Social Media">سوشيال ميديا</div><div class="svc-d" data-ar="محتوى بصري استراتيجي لمنصات التواصل الاجتماعي يعزز التفاعل ويبني العلامات التجارية." data-en="Strategic visual content for Instagram, Facebook & platforms that drives engagement and builds brands.">محتوى بصري استراتيجي لمنصات التواصل الاجتماعي يعزز التفاعل ويبني العلامات التجارية.</div><div class="svc-arr">←</div></a>
+    <a href="services/brand-identity.html" class="svc"><div class="svc-bg-n">02</div><div class="svc-slash">/</div><div class="svc-n" data-ar="هوية بصرية" data-en="Branding">هوية بصرية</div><div class="svc-d" data-ar="أنظمة هوية متكاملة — شعارات، قرطاسية، أدلة العلامة التجارية، ولغة بصرية تدوم." data-en="Complete identity systems — logos, stationery, brand guides, and visual language that endures.">أنظمة هوية متكاملة — شعارات، قرطاسية، أدلة العلامة التجارية، ولغة بصرية تدوم.</div><div class="svc-arr">←</div></a>
+    <a href="services/print-design.html" class="svc"><div class="svc-bg-n">03</div><div class="svc-slash">/</div><div class="svc-n" data-ar="مطبوعات" data-en="Printing">مطبوعات</div><div class="svc-d" data-ar="بروشورات، كتالوجات، بانرات، رابّ سيارات، ومواد مطبوعة بدقة وحرفية." data-en="Brochures, catalogues, banners, vehicle wraps, and print collateral with precision and craft.">بروشورات، كتالوجات، بانرات، رابّ سيارات، ومواد مطبوعة بدقة وحرفية.</div><div class="svc-arr">←</div></a>
+    <a href="services/presentations.html" class="svc"><div class="svc-bg-n">04</div><div class="svc-slash">/</div><div class="svc-n" data-ar="عروض تقديمية" data-en="Presentations">عروض تقديمية</div><div class="svc-d" data-ar="عروض تقديمية بصرية مبنية على البيانات توصل الأفكار بوضوح وتأثير." data-en="Data-driven, visually compelling presentations that communicate ideas with clarity and impact.">عروض تقديمية بصرية مبنية على البيانات توصل الأفكار بوضوح وتأثير.</div><div class="svc-arr">←</div></a>
+    <a href="services/ai-design.html" class="svc"><div class="svc-bg-n">05</div><div class="svc-slash">/</div><div class="svc-n" data-ar="تصميم بالذكاء الاصطناعي" data-en="AI Design">تصميم بالذكاء الاصطناعي</div><div class="svc-d" data-ar="نوظّف أحدث أدوات الذكاء الاصطناعي (Midjourney، DALL·E، Firefly) لإنتاج تصاميم مبتكرة بجودة احترافية وسرعة قياسية." data-en="We harness cutting-edge AI tools (Midjourney, DALL·E, Firefly) to craft innovative designs with pro quality and record speed.">نوظّف أحدث أدوات الذكاء الاصطناعي (Midjourney، DALL·E، Firefly) لإنتاج تصاميم مبتكرة بجودة احترافية وسرعة قياسية.</div><div class="svc-arr">←</div></a>
+    <a href="services/web-design.html" class="svc"><div class="svc-bg-n">06</div><div class="svc-slash">/</div><div class="svc-n" data-ar="تصميم مواقع إلكترونية" data-en="Web Design">تصميم مواقع إلكترونية</div><div class="svc-d" data-ar="تصميم وتطوير مواقع إلكترونية عصرية وسريعة — صفحات هبوط، بورتفوليو، ومتاجر إلكترونية متجاوبة مع جميع الأجهزة." data-en="Modern, fast website design & development — landing pages, portfolios, and responsive e-commerce sites across all devices.">تصميم وتطوير مواقع إلكترونية عصرية وسريعة — صفحات هبوط، بورتفوليو، ومتاجر إلكترونية متجاوبة مع جميع الأجهزة.</div><div class="svc-arr">←</div></a>
   </div>
 </section>
 
@@ -713,30 +719,60 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
 </section>
 
 <!-- Process Section -->
-<section class="process-section">
+<section class="process-section" id="process">
   <p class="sub-title rv" data-ar="الطريقة" data-en="The Method">الطريقة</p>
   <h2 class="section-title rv" data-ar="كيف نشتغل" data-en="How We Work">كيف نشتغل</h2>
-  <div class="process-grid">
-    <div class="process-step rv">
-      <p class="step-num" data-ar="01 — الاكتشاف" data-en="01 — Discovery">01 — الاكتشاف</p>
-      <p class="step-title" data-ar="الفهم" data-en="Understanding">الفهم</p>
-      <p class="step-desc" data-ar="نبدأ بفهم علامتك التجارية، جمهورك، وأهدافك قبل أي قلم على ورق." data-en="We start by understanding your brand, audience, and goals before any pen hits paper.">نبدأ بفهم علامتك التجارية، جمهورك، وأهدافك قبل أي قلم على ورق.</p>
+
+  <!-- Timeline Navigation -->
+  <div class="proc-timeline rv">
+    <div class="proc-track"><div class="proc-progress"></div></div>
+    <button class="proc-dot active" data-step="0"><span class="proc-dot-n">01</span></button>
+    <button class="proc-dot" data-step="1"><span class="proc-dot-n">02</span></button>
+    <button class="proc-dot" data-step="2"><span class="proc-dot-n">03</span></button>
+    <button class="proc-dot" data-step="3"><span class="proc-dot-n">04</span></button>
+  </div>
+
+  <!-- Step Content -->
+  <div class="proc-content rv">
+    <div class="proc-card active" data-step="0">
+      <div class="proc-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <p class="proc-label" data-ar="01 — الاكتشاف" data-en="01 — Discovery">01 — الاكتشاف</p>
+      <h3 class="proc-title" data-ar="الفهم" data-en="Understanding">الفهم</h3>
+      <p class="proc-desc" data-ar="نبدأ بفهم علامتك التجارية، جمهورك، وأهدافك قبل أي قلم على ورق. نطرح الأسئلة الصحيحة لنبني أساساً متيناً." data-en="We start by understanding your brand, audience, and goals before any pen hits paper. We ask the right questions to build a solid foundation.">نبدأ بفهم علامتك التجارية، جمهورك، وأهدافك قبل أي قلم على ورق. نطرح الأسئلة الصحيحة لنبني أساساً متيناً.</p>
     </div>
-    <div class="process-step rv d1">
-      <p class="step-num" data-ar="02 — التخطيط" data-en="02 — Strategy">02 — التخطيط</p>
-      <p class="step-title" data-ar="الاستراتيجية" data-en="Strategy">الاستراتيجية</p>
-      <p class="step-desc" data-ar="نبني مسار بصري واضح يعكس شخصيتك ويميّزك عن المنافسين." data-en="We build a clear visual path that reflects your personality and sets you apart.">نبني مسار بصري واضح يعكس شخصيتك ويميّزك عن المنافسين.</p>
+    <div class="proc-card" data-step="1">
+      <div class="proc-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </div>
+      <p class="proc-label" data-ar="02 — التخطيط" data-en="02 — Strategy">02 — التخطيط</p>
+      <h3 class="proc-title" data-ar="الاستراتيجية" data-en="Strategy">الاستراتيجية</h3>
+      <p class="proc-desc" data-ar="نبني مسار بصري واضح يعكس شخصيتك ويميّزك عن المنافسين. نحدد الاتجاه الإبداعي والرسائل البصرية." data-en="We build a clear visual path that reflects your personality and sets you apart. We define the creative direction and visual messaging.">نبني مسار بصري واضح يعكس شخصيتك ويميّزك عن المنافسين. نحدد الاتجاه الإبداعي والرسائل البصرية.</p>
     </div>
-    <div class="process-step rv d2">
-      <p class="step-num" data-ar="03 — التصميم" data-en="03 — Design">03 — التصميم</p>
-      <p class="step-title" data-ar="التصميم" data-en="Design">التصميم</p>
-      <p class="step-desc" data-ar="نُنتج تصاميم دقيقة ومتكاملة — من الشعار للمطبوعات للسوشيال." data-en="We produce precise, cohesive designs — from logos to print to social media.">نُنتج تصاميم دقيقة ومتكاملة — من الشعار للمطبوعات للسوشيال.</p>
+    <div class="proc-card" data-step="2">
+      <div class="proc-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+      </div>
+      <p class="proc-label" data-ar="03 — التصميم" data-en="03 — Design">03 — التصميم</p>
+      <h3 class="proc-title" data-ar="التصميم" data-en="Design">التصميم</h3>
+      <p class="proc-desc" data-ar="نُنتج تصاميم دقيقة ومتكاملة — من الشعار للمطبوعات للسوشيال. كل بكسل في مكانه الصحيح." data-en="We produce precise, cohesive designs — from logos to print to social media. Every pixel in its right place.">نُنتج تصاميم دقيقة ومتكاملة — من الشعار للمطبوعات للسوشيال. كل بكسل في مكانه الصحيح.</p>
     </div>
-    <div class="process-step rv d3">
-      <p class="step-num" data-ar="04 — التسليم" data-en="04 — Deliver">04 — التسليم</p>
-      <p class="step-title" data-ar="التسليم" data-en="Delivery">التسليم</p>
-      <p class="step-desc" data-ar="ملفات جاهزة بكل الصيغ، مع دليل هوية بصرية كامل." data-en="Ready files in all formats, with a complete brand identity guide.">ملفات جاهزة بكل الصيغ، مع دليل هوية بصرية كامل.</p>
+    <div class="proc-card" data-step="3">
+      <div class="proc-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <p class="proc-label" data-ar="04 — التسليم" data-en="04 — Deliver">04 — التسليم</p>
+      <h3 class="proc-title" data-ar="التسليم" data-en="Delivery">التسليم</h3>
+      <p class="proc-desc" data-ar="ملفات جاهزة بكل الصيغ، مع دليل هوية بصرية كامل. مشروعك جاهز للانطلاق." data-en="Ready files in all formats, with a complete brand identity guide. Your project is ready to launch.">ملفات جاهزة بكل الصيغ، مع دليل هوية بصرية كامل. مشروعك جاهز للانطلاق.</p>
     </div>
+  </div>
+
+  <!-- Step Navigation Arrows -->
+  <div class="proc-nav rv">
+    <button class="proc-arrow proc-prev" disabled data-ar="← السابق" data-en="Previous →">← السابق</button>
+    <span class="proc-counter"><span class="proc-current">1</span> / 4</span>
+    <button class="proc-arrow proc-next" data-ar="التالي →" data-en="→ Next">التالي →</button>
   </div>
 </section>
 
@@ -874,6 +910,77 @@ const obs = new IntersectionObserver(entries=>{
 },{threshold:.08});
 document.querySelectorAll(".rv").forEach(el=>obs.observe(el));
 
+// Process Timeline
+(function(){
+  let cur = 0;
+  const dots = document.querySelectorAll(".proc-dot");
+  const cards = document.querySelectorAll(".proc-card");
+  const progress = document.querySelector(".proc-progress");
+  const prev = document.querySelector(".proc-prev");
+  const next = document.querySelector(".proc-next");
+  const counter = document.querySelector(".proc-current");
+  const total = dots.length;
+  if(!dots.length) return;
+
+  function goTo(idx){
+    if(idx < 0 || idx >= total) return;
+    const dir = idx > cur ? 1 : -1;
+    // Update dots
+    dots.forEach((d,i)=>{
+      d.classList.remove("active","done");
+      if(i < idx) d.classList.add("done");
+      if(i === idx) d.classList.add("active");
+    });
+    // Animate cards
+    cards.forEach((c,i)=>{
+      c.classList.remove("active","exit-left");
+      if(i === cur && i !== idx){
+        c.classList.add(dir > 0 ? "exit-left" : "");
+      }
+    });
+    setTimeout(()=>{
+      cards.forEach((c,i)=>{
+        c.classList.remove("active","exit-left");
+        c.style.transform = "";
+        if(i === idx) c.classList.add("active");
+      });
+    }, 30);
+    // Progress bar
+    progress.style.width = (idx / (total - 1) * 100) + "%";
+    // Buttons
+    prev.disabled = idx === 0;
+    next.disabled = idx === total - 1;
+    counter.textContent = idx + 1;
+    cur = idx;
+  }
+
+  dots.forEach(d => d.addEventListener("click", ()=> goTo(+d.dataset.step)));
+  prev.addEventListener("click", ()=> goTo(cur - 1));
+  next.addEventListener("click", ()=> goTo(cur + 1));
+
+  // Auto-play when section is visible
+  let autoTimer = null;
+  const procObs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting && !autoTimer){
+        autoTimer = setInterval(()=>{
+          if(cur < total - 1) goTo(cur + 1);
+          else { clearInterval(autoTimer); autoTimer = null; }
+        }, 3000);
+      } else if(!e.isIntersecting && autoTimer){
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    });
+  },{threshold:.3});
+  procObs.observe(document.querySelector(".process-section"));
+
+  // Stop auto-play on manual interaction
+  document.querySelector(".process-section").addEventListener("click",()=>{
+    if(autoTimer){ clearInterval(autoTimer); autoTimer = null; }
+  });
+})();
+
 // Filter tabs
 document.querySelectorAll(".ftab").forEach(tab=>{
   tab.addEventListener("click",function(){
@@ -900,36 +1007,182 @@ document.querySelectorAll(".ftab").forEach(tab=>{
 /* Process Section */
 .process-section {
   padding: 100px 40px;
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
 }
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
-  margin-top: 60px;
-}
-.process-step {
+
+/* Timeline */
+.proc-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
-  padding: 40px 30px;
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 4px;
+  margin-top: 60px;
+  padding: 0 20px;
 }
-.step-num {
+.proc-track {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: rgba(0,0,0,0.08);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+.proc-progress {
+  height: 100%;
+  width: 0%;
+  background: var(--black);
+  transition: width .6s cubic-bezier(.4,0,.2,1);
+}
+.proc-dot {
+  position: relative;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.12);
+  background: var(--white);
+  cursor: pointer;
+  transition: all .4s cubic-bezier(.4,0,.2,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+}
+.proc-dot-n {
   font-size: 11px;
-  letter-spacing: 3px;
-  color: #999;
-  margin-bottom: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--mid);
+  transition: color .4s;
 }
-.step-title {
-  font-size: 18px;
-  font-weight: 600;
+.proc-dot.active {
+  border-color: var(--black);
+  background: var(--black);
+  transform: scale(1.15);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.proc-dot.active .proc-dot-n { color: var(--white); }
+.proc-dot.done {
+  border-color: var(--black);
+  background: var(--black);
+}
+.proc-dot.done .proc-dot-n { color: var(--white); }
+.proc-dot:hover:not(.active) {
+  border-color: rgba(0,0,0,0.3);
+  transform: scale(1.08);
+}
+
+/* Step Content Card */
+.proc-content {
+  position: relative;
+  min-height: 280px;
+  margin-top: 48px;
+  overflow: hidden;
+}
+.proc-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--black);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 56px 52px;
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity .5s cubic-bezier(.4,0,.2,1), transform .5s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+}
+[dir="rtl"] .proc-card { transform: translateX(-60px); }
+.proc-card.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  position: relative;
+}
+.proc-card.exit-left {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+[dir="rtl"] .proc-card.exit-left { transform: translateX(60px); }
+.proc-icon {
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.5);
+  transition: color .4s;
+}
+.proc-card.active .proc-icon { color: var(--white); }
+.proc-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
   margin-bottom: 12px;
 }
-.step-desc {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.7;
+.proc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+.proc-desc {
+  font-size: 15px;
+  line-height: 2;
+  color: rgba(255,255,255,0.55);
+  max-width: 560px;
+}
+
+/* Navigation Arrows */
+.proc-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+.proc-arrow {
+  font-family: 'Raleway', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: var(--black);
+  background: none;
+  border: 1px solid rgba(0,0,0,0.15);
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: all .3s;
+}
+.proc-arrow:hover:not(:disabled) {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+.proc-arrow:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+.proc-counter {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: var(--mid);
+  letter-spacing: 2px;
+}
+.proc-current {
+  color: var(--black);
+  font-weight: 500;
+}
+
+@media(max-width:900px){
+  .process-section { padding: 80px 24px; }
+  .proc-dot { width: 40px; height: 40px; }
+  .proc-card { padding: 40px 28px; }
+  .proc-nav { gap: 20px; }
+  .proc-arrow { padding: 10px 20px; font-size: 9px; }
 }
 
 /* Testimonials */
