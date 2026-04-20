@@ -114,7 +114,8 @@ body{background:var(--white);color:var(--black);font-family:'Raleway',sans-serif
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 60px;transition:background .4s,backdrop-filter .4s;}
 nav.scrolled{background:rgba(245,245,243,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray);}
-.logo-mark{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;letter-spacing:-1px;color:var(--black);text-decoration:none;display:flex;align-items:baseline;gap:0;}
+.logo-mark{color:var(--black);text-decoration:none;display:flex;align-items:center;}
+.logo-video{height:48px;width:auto;display:block;mix-blend-mode:multiply;}
 .logo-a{font-size:34px;font-weight:400;}
 .logo-slash{font-size:38px;font-weight:100;margin:0 1px;}
 .logo-txt{font-family:'Raleway',sans-serif;font-size:9px;letter-spacing:4px;font-weight:200;text-transform:uppercase;margin-left:4px;margin-bottom:2px;}
@@ -372,7 +373,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
 <!-- NAV -->
 <nav id="mainNav" role="navigation" aria-label="القائمة الرئيسية">
   <a href="#hero" class="logo-mark">
-    <img src="ay-logo.png" alt="Ay Design" style="height:44px;width:auto;" />
+    <video class="logo-video" src="logo.mp4" autoplay loop muted playsinline preload="auto" aria-label="AY. Design"></video>
   </a>
   <ul class="nav-links">
     <li><a href="#about" data-ar="من نحن" data-en="About">من نحن</a></li>
@@ -802,7 +803,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
 
 <!-- FOOTER -->
 <footer>
-  <div class="ft-logo">A/<span style="font-family:Raleway;font-size:10px;letter-spacing:3px;font-weight:200;"> DESIGN</span></div>
+  <div class="ft-logo"><video src="logo.mp4" autoplay loop muted playsinline style="height:36px;width:auto;display:block;mix-blend-mode:multiply;"></video></div>
   <span class="ft-copy" data-ar="© 2015–2026 AY. Design · جميع الحقوق محفوظة" data-en="© 2015–2026 AY. Design · All Rights Reserved">© 2015–2026 AY. Design · جميع الحقوق محفوظة</span>
   <ul class="ft-links">
     <li><a href="#about" data-ar="من نحن" data-en="About">من نحن</a></li>
