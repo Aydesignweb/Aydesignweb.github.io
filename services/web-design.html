@@ -23,6 +23,23 @@
 <link rel="stylesheet" href="../articles/article.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KF85L0KXWX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KF85L0KXWX');</script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://aydesignweb.github.io/"},{"@type":"ListItem","position":2,"name":"خدماتنا","item":"https://aydesignweb.github.io/#services"},{"@type":"ListItem","position":3,"name":"تصميم مواقع إلكترونية","item":"https://aydesignweb.github.io/services/web-design.html"}]}
+</script>
+<style>
+.breadcrumb{padding:100px 60px 0;display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9a9a9a;}
+.breadcrumb a{color:#9a9a9a;text-decoration:none;transition:color .3s;}
+.breadcrumb a:hover{color:#0a0a0a;}
+.breadcrumb span{color:#ccc;}
+@media(max-width:768px){.breadcrumb{padding:90px 24px 0;flex-wrap:wrap;gap:6px;font-size:10px;}}
+.art-related{padding:40px 60px 0;border-top:1px solid #e8e8e6;margin-top:40px;}
+.art-related h3{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#9a9a9a;margin-bottom:20px;}
+.art-related-link{display:inline-flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#0a0a0a;text-decoration:none;border-bottom:1px solid #e8e8e6;padding-bottom:8px;transition:all .3s;}
+.art-related-link::after{content:'←';font-size:18px;transition:transform .3s;}
+.art-related-link:hover{color:#c0392b;}
+.art-related-link:hover::after{transform:translateX(-6px);}
+@media(max-width:768px){.art-related{padding:40px 24px 0;}.art-related-link{font-size:18px;}}
+</style>
 </head>
 <body dir="rtl">
 <nav>
@@ -32,6 +49,15 @@
     <button id="langToggle" class="lang-btn">EN</button>
   </div>
 </nav>
+
+<nav class="breadcrumb" aria-label="breadcrumb">
+  <a href="../index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+  <span>/</span>
+  <a href="../index.html#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+  <span>/</span>
+  <span data-ar="مواقع إلكترونية" data-en="Web Design">مواقع إلكترونية</span>
+</nav>
+
 <img class="art-hero-img" src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Web design on laptop" loading="eager" width="1200" height="480">
 <header class="art-hero">
   <div class="art-cat" data-ar="خدمة · مواقع إلكترونية" data-en="Service · Web Design">خدمة · مواقع إلكترونية</div>
@@ -46,6 +72,11 @@
     <h3 data-ar="جاهز لموقعك الجديد؟" data-en="Ready for Your New Website?">جاهز لموقعك الجديد؟</h3>
     <p data-ar="نصمم لك موقع يحقق أهدافك." data-en="We design a site that achieves your goals.">نصمم لك موقع يحقق أهدافك.</p>
     <a href="https://wa.me/966595074317" target="_blank" rel="noopener" data-ar="ابدأ مشروعك ←" data-en="Start Your Project →">ابدأ مشروعك ←</a>
+  </div>
+
+  <div class="art-related">
+    <h3 data-ar="اقرأ أيضاً" data-en="Read Also">اقرأ أيضاً</h3>
+    <a href="../faq.html" class="art-related-link" data-ar="أسئلة شائعة عن خدمات التصميم" data-en="Frequently Asked Questions About Design Services">أسئلة شائعة عن خدمات التصميم</a>
   </div>
 </main>
 <section class="related">
