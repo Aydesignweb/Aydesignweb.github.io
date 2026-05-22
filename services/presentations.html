@@ -17,6 +17,26 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"تصميم عروض تقديمية","alternateName":"Presentation Design","description":"تصميم عروض تقديمية بصرية مبنية على البيانات تقنع وتؤثر.","provider":{"@type":"Organization","name":"AY. Design","url":"https://aydesignweb.github.io/"},"areaServed":"SA","serviceType":"Presentation Design","url":"https://aydesignweb.github.io/services/presentations.html"}
 </script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://aydesignweb.github.io/"},{"@type":"ListItem","position":2,"name":"خدماتنا","item":"https://aydesignweb.github.io/#services"},{"@type":"ListItem","position":3,"name":"تصميم عروض تقديمية","item":"https://aydesignweb.github.io/services/presentations.html"}]}
+</script>
+
+<style>
+.breadcrumb{padding:100px 60px 0;display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9a9a9a;}
+.breadcrumb a{color:#9a9a9a;text-decoration:none;transition:color .3s;}
+.breadcrumb a:hover{color:#0a0a0a;}
+.breadcrumb span{color:#ccc;}
+@media(max-width:768px){.breadcrumb{padding:90px 24px 0;flex-wrap:wrap;gap:6px;font-size:10px;}}
+.art-related{padding:40px 60px 0;border-top:1px solid #e8e8e6;margin-top:40px;}
+.art-related h3{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#9a9a9a;margin-bottom:20px;}
+.art-related-link{display:inline-flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#0a0a0a;text-decoration:none;border-bottom:1px solid #e8e8e6;padding-bottom:8px;transition:all .3s;}
+.art-related-link::after{content:'←';font-size:18px;transition:transform .3s;}
+.art-related-link:hover{color:#c0392b;}
+.art-related-link:hover::after{transform:translateX(-6px);}
+@media(max-width:768px){.art-related{padding:40px 24px 0;}.art-related-link{font-size:18px;}}
+</style>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
@@ -32,6 +52,15 @@
     <button id="langToggle" class="lang-btn">EN</button>
   </div>
 </nav>
+
+<nav class="breadcrumb" aria-label="breadcrumb">
+  <a href="../index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+  <span>/</span>
+  <a href="../index.html#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+  <span>/</span>
+  <span data-ar="تصميم عروض تقديمية" data-en="Presentation Design">تصميم عروض تقديمية</span>
+</nav>
+
 <img class="art-hero-img" src="https://images.pexels.com/photos/5716030/pexels-photo-5716030.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Business presentation" loading="eager" width="1200" height="480">
 <header class="art-hero">
   <div class="art-cat" data-ar="خدمة · عروض تقديمية" data-en="Service · Presentations">خدمة · عروض تقديمية</div>
@@ -45,7 +74,12 @@
   <div class="art-cta">
     <h3 data-ar="تحتاج عرض تقديمي مؤثر؟" data-en="Need an Impactful Deck?">تحتاج عرض تقديمي مؤثر؟</h3>
     <p data-ar="نصمم لك عرض يقنع ويؤثر." data-en="We design decks that convince and inspire.">نصمم لك عرض يقنع ويؤثر.</p>
-    <a href="https://wa.me/966595074317" target="_blank" rel="noopener" data-ar="ابدأ مشروعك ←" data-en="Start Your Project →">ابدأ مشروعك ←</a>
+    <a href="https://wa.me/966595074317" target="_blank" rel="noopener noreferrer" data-ar="ابدأ مشروعك ←" data-en="Start Your Project →">ابدأ مشروعك ←</a>
+  </div>
+
+  <div class="art-related">
+    <h3 data-ar="اقرأ أيضاً" data-en="Read Also">اقرأ أيضاً</h3>
+    <a href="../articles/presentation-design.html" class="art-related-link" data-ar="مقال: العروض التقديمية" data-en="Article: Presentation Design">مقال: العروض التقديمية</a>
   </div>
 </main>
 <section class="related">

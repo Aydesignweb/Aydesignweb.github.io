@@ -349,8 +349,22 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
 .wa-float::before{content:'';position:absolute;width:100%;height:100%;border-radius:50%;background:#25D366;opacity:.35;animation:wapulse 2s ease infinite;}
 @keyframes wapulse{0%{transform:scale(1);opacity:.35;}100%{transform:scale(1.75);opacity:0;}}
 
+/* HAMBURGER BUTTON */
+.ham-btn{display:none;flex-direction:column;justify-content:space-between;width:28px;height:18px;background:none;border:none;cursor:pointer;padding:0;z-index:200;}
+.ham-btn span{display:block;width:100%;height:1.5px;background:var(--black);transition:transform .35s ease,opacity .25s ease;}
+.ham-btn.open span:nth-child(1){transform:translateY(8.25px) rotate(45deg);}
+.ham-btn.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.ham-btn.open span:nth-child(3){transform:translateY(-8.25px) rotate(-45deg);}
+
+/* MOBILE MENU OVERLAY */
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--white);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:36px;opacity:0;transition:opacity .35s ease;}
+.mobile-menu.open{opacity:1;}
+.mobile-menu a{font-size:22px;letter-spacing:4px;text-transform:uppercase;color:var(--black);text-decoration:none;font-family:'Cormorant Garamond',serif;font-weight:300;}
+.mobile-menu a:hover{color:var(--mid);}
+.mobile-menu .mob-lang{font-size:10px;letter-spacing:4px;text-transform:uppercase;background:none;border:1px solid var(--black);padding:8px 20px;cursor:pointer;font-family:'Raleway',sans-serif;margin-top:12px;}
+
 @media(max-width:900px){
-  nav{padding:20px 24px;}.nav-links{display:none;}
+  nav{padding:20px 24px;}.nav-links{display:none;}.ham-btn{display:flex;}
   #hero,.section-wrap,.work-section,.contact-section,.philosophy,.services-dark,.articles-section{padding:80px 24px;}
   .articles-grid{grid-template-columns:1fr;gap:24px;}
   .about-grid{grid-template-columns:1fr;gap:60px;}
@@ -384,8 +398,24 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
     <li><a href="faq.html" data-ar="أسئلة شائعة" data-en="FAQ">أسئلة شائعة</a></li>
     <li><a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a></li>
   </ul>
-  <button id="langToggle" class="lang-btn" aria-label="تبديل اللغة">EN</button>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <button id="langToggle" class="lang-btn" aria-label="تبديل اللغة">EN</button>
+    <button class="ham-btn" id="hamBtn" aria-label="القائمة" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="القائمة الرئيسية" aria-modal="true">
+  <a href="#about" data-ar="من نحن" data-en="About">من نحن</a>
+  <a href="#work" data-ar="أعمالنا" data-en="Work">أعمالنا</a>
+  <a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+  <a href="#articles" data-ar="مقالات" data-en="Articles">مقالات</a>
+  <a href="faq.html" data-ar="أسئلة شائعة" data-en="FAQ">أسئلة شائعة</a>
+  <a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a>
+  <button class="mob-lang" id="mobLangToggle" aria-label="تبديل اللغة">EN</button>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -393,7 +423,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
     <div class="hero-eyebrow" data-ar="استوديو تصميم إبداعي &nbsp;·&nbsp; بورتفوليو" data-en="Creative Studio &nbsp;·&nbsp; Portfolio">استوديو تصميم إبداعي &nbsp;·&nbsp; بورتفوليو</div>
     <h1 class="hero-title" data-ar="نصمم" data-en="We Design">نصمم<br><em><span id="heroRotate" data-ar="هويات" data-en="Brands">هويات</span></em></h1>
     <p class="hero-sub" data-ar="AY. Design &nbsp;·&nbsp; البساطة هي المفتاح" data-en="AY. Design &nbsp;·&nbsp; Where Simplicity Meets Creativity">AY. Design &nbsp;·&nbsp; البساطة هي المفتاح</p>
-    <a href="https://wa.me/966595074317" target="_blank" class="hero-cta" data-ar="ابدأ مشروعك &nbsp;←" data-en="Start a Project &nbsp;→">ابدأ مشروعك &nbsp;←</a>
+    <a href="https://wa.me/966595074317" target="_blank" rel="noopener noreferrer" class="hero-cta" data-ar="ابدأ مشروعك &nbsp;←" data-en="Start a Project &nbsp;→">ابدأ مشروعك &nbsp;←</a>
   </div>
   <div class="hero-triangle" data-speed="0.03"></div>
   <div class="hero-slash" data-speed="0.05"></div>
@@ -529,85 +559,85 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
 
     <!-- Saudi Electricity -->
     <div class="proj-card rv" data-cat="social">
-      <div class="proj-img-wrap"><img src="images/sec-social.jpg" alt="Saudi Electricity Social Media" loading="lazy"></div>
+      <div class="proj-img-wrap"><img src="images/sec-social.jpg" alt="تصميم سوشيال ميديا للشركة السعودية للكهرباء — AY. Design" loading="lazy" width="1754" height="1240"></div>
       <div class="card-meta"><div class="card-cat">سوشيال ميديا</div><div class="card-name">الشركة السعودية للكهرباء</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Palme D'Or -->
     <div class="proj-card rv d1" data-cat="social">
-      <div class="proj-img-wrap"><img src="images/palmedOr-social.jpg" alt="Palme D'Or Perfume" loading="lazy"></div>
+      <div class="proj-img-wrap"><img src="images/palmedOr-social.jpg" alt="تصميم سوشيال ميديا لعطر Palme D'Or — AY. Design" loading="lazy" width="1754" height="1240"></div>
       <div class="card-meta"><div class="card-cat">سوشيال ميديا · عطور</div><div class="card-name">Palme D'Or</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Razen Law -->
     <div class="proj-card rv d2" data-cat="branding">
-      <div class="proj-img-wrap"><img src="images/razen-brand.jpg" alt="Razen Law Firm" loading="lazy"></div>
+      <div class="proj-img-wrap"><img src="images/razen-brand.jpg" alt="تصميم هوية بصرية لمكتب رئيس للمحاماة — AY. Design" loading="lazy" width="1754" height="1240"></div>
       <div class="card-meta"><div class="card-cat">هوية بصرية</div><div class="card-name">مكتب رئيس للمحاماة</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Ijarah -->
     <div class="proj-card rv" data-cat="social">
-      <div class="proj-img-wrap"><img src="images/ijarah-social.jpg" alt="Ijarah Finance" loading="lazy"></div>
+      <div class="proj-img-wrap"><img src="images/ijarah-social.jpg" alt="تصميم سوشيال ميديا لإجارة للتمويل — AY. Design" loading="lazy" width="1754" height="1240"></div>
       <div class="card-meta"><div class="card-cat">سوشيال ميديا · تمويل</div><div class="card-name">إجارة للتمويل</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Arco Valley -->
     <div class="proj-card rv d1" data-cat="branding">
-      <div class="proj-img-wrap"><img src="images/arco-brand.jpg" alt="Arco Valley" loading="lazy"></div>
+      <div class="proj-img-wrap"><img src="images/arco-brand.jpg" alt="تصميم هوية بصرية لـ Arco Valley العقارية — AY. Design" loading="lazy" width="1754" height="1240"></div>
       <div class="card-meta"><div class="card-cat">هوية بصرية · عقارات</div><div class="card-name">Arco Valley</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Syrup Presentation -->
     <div class="proj-card rv d2" data-cat="pres">
-      <div class="proj-img-wrap"><img src="images/syrup-pres.jpg" alt="Syrup Presentation" loading="lazy"></div>
+      <div class="proj-img-wrap"><img src="images/syrup-pres.jpg" alt="تصميم عرض تقديمي لـ Syrup — AY. Design" loading="lazy" width="1754" height="1240"></div>
       <div class="card-meta"><div class="card-cat">عروض تقديمية · ترفيه</div><div class="card-name">Syrup</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- VACA Burger -->
     <div class="proj-card rv" data-cat="social">
-      <div class="proj-img-wrap"><img src="images/vaca-social.jpg" alt="VACA Burger" loading="lazy"></div>
+      <div class="proj-img-wrap"><img src="images/vaca-social.jpg" alt="تصميم سوشيال ميديا لـ VACA Burger — AY. Design" loading="lazy" width="1754" height="1240"></div>
       <div class="card-meta"><div class="card-cat">سوشيال ميديا · مطاعم</div><div class="card-name">VACA Burger</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Beeline -->
     <div class="proj-card rv d1" data-cat="branding">
-      <div class="proj-img-wrap"><img src="images/beeline-brand.jpg" alt="BeeLine" loading="lazy"></div>
+      <div class="proj-img-wrap"><img src="images/beeline-brand.jpg" alt="تصميم هوية بصرية لماركة BeeLine للأزياء — AY. Design" loading="lazy" width="1754" height="1240"></div>
       <div class="card-meta"><div class="card-cat">هوية بصرية · أزياء</div><div class="card-name">BeeLine</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- ATTA Print -->
     <div class="proj-card rv d2" data-cat="print">
-      <div class="proj-img-wrap"><img src="images/atta-print.jpg" alt="ATTA BASES" loading="lazy"></div>
+      <div class="proj-img-wrap"><img src="images/atta-print.jpg" alt="تصميم كتالوج مطبوعات لـ ATTA BASES — AY. Design" loading="lazy" width="1754" height="1240"></div>
       <div class="card-meta"><div class="card-cat">مطبوعات · كتالوج</div><div class="card-name">ATTA BASES</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- 6th Street -->
     <div class="proj-card rv" data-cat="social">
-      <div class="proj-img-wrap"><img src="images/6thstreet-social.jpg" alt="6th Street" loading="lazy"></div>
+      <div class="proj-img-wrap"><img src="images/6thstreet-social.jpg" alt="تصميم سوشيال ميديا لـ 6th Street — AY. Design" loading="lazy" width="1754" height="1240"></div>
       <div class="card-meta"><div class="card-cat">سوشيال ميديا · لايف ستايل</div><div class="card-name">6th Street</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Salwa -->
     <div class="proj-card rv d1" data-cat="branding">
-      <div class="proj-img-wrap"><img src="images/salwa-brand.jpg" alt="Salwa Restaurant" loading="lazy"></div>
+      <div class="proj-img-wrap"><img src="images/salwa-brand.jpg" alt="تصميم هوية بصرية لمطعم سلوى — AY. Design" loading="lazy" width="1754" height="1240"></div>
       <div class="card-meta"><div class="card-cat">هوية بصرية · مطاعم</div><div class="card-name">مطعم سلوى</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- GamaVisa Print -->
     <div class="proj-card rv d2" data-cat="print">
-      <div class="proj-img-wrap"><img src="images/gamavisa-print.jpg" alt="GamaVisa" loading="lazy"></div>
+      <div class="proj-img-wrap"><img src="images/gamavisa-print.jpg" alt="تصميم بطاقات أعمال لـ GamaVisa — AY. Design" loading="lazy" width="1754" height="1240"></div>
       <div class="card-meta"><div class="card-cat">مطبوعات · بطاقات أعمال</div><div class="card-name">GamaVisa</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Saudi Chambers -->
     <div class="proj-card rv" data-cat="pres">
-      <div class="proj-img-wrap"><img src="images/chambers-pres.jpg" alt="Federation of Saudi Chambers" loading="lazy"></div>
+      <div class="proj-img-wrap"><img src="images/chambers-pres.jpg" alt="تصميم عرض تقديمي لاتحاد الغرف التجارية السعودية — AY. Design" loading="lazy" width="1754" height="1240"></div>
       <div class="card-meta"><div class="card-cat">عروض تقديمية · حكومي</div><div class="card-name">اتحاد الغرف التجارية</div><div class="card-hover-bar"></div></div>
     </div>
 
     <!-- Zestaritty Vehicle Wrap -->
     <div class="proj-card rv d1" data-cat="print">
-      <div class="proj-img-wrap"><img src="images/zestaritty-print.jpg" alt="Zestaritty" loading="lazy"></div>
+      <div class="proj-img-wrap"><img src="images/zestaritty-print.jpg" alt="تصميم رابّ سيارات لـ Zerofatty — AY. Design" loading="lazy" width="1754" height="1240"></div>
       <div class="card-meta"><div class="card-cat">مطبوعات · رابّ سيارات</div><div class="card-name">Zerofatty</div><div class="card-hover-bar"></div></div>
     </div>
 
@@ -695,7 +725,8 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
   </div>
   <div class="rv d1">
     <form class="contact-form" id="contactForm" action="https://formsubmit.co/aymanmalostath@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <input type="hidden" name="_next" value="https://aydesignweb.github.io/#contact">
       <div class="form-group">
         <input type="text" name="name" id="formName" placeholder=" " required>
@@ -870,6 +901,45 @@ document.getElementById("langToggle").addEventListener("click", function(){
       target.className = "hero-rotate-in";
     }, 400);
   }, 2800);
+})();
+
+// Mobile hamburger menu
+(function(){
+  const hamBtn = document.getElementById("hamBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mobLangToggle = document.getElementById("mobLangToggle");
+  if(!hamBtn || !mobileMenu) return;
+
+  function openMenu(){
+    mobileMenu.style.display = "flex";
+    requestAnimationFrame(()=>{ mobileMenu.classList.add("open"); });
+    hamBtn.classList.add("open");
+    hamBtn.setAttribute("aria-expanded","true");
+    document.body.style.overflow = "hidden";
+    // sync mob lang button label
+    mobLangToggle.textContent = document.getElementById("langToggle").textContent;
+  }
+  function closeMenu(){
+    mobileMenu.classList.remove("open");
+    hamBtn.classList.remove("open");
+    hamBtn.setAttribute("aria-expanded","false");
+    document.body.style.overflow = "";
+    setTimeout(()=>{ mobileMenu.style.display = "none"; }, 350);
+  }
+
+  hamBtn.addEventListener("click", ()=>{ mobileMenu.classList.contains("open") ? closeMenu() : openMenu(); });
+
+  // Close on link click
+  mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+
+  // Sync lang toggle from mobile menu
+  mobLangToggle.addEventListener("click", ()=>{
+    document.getElementById("langToggle").click();
+    mobLangToggle.textContent = document.getElementById("langToggle").textContent;
+  });
+
+  // Close on Escape
+  document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeMenu(); });
 })();
 
 // Hero parallax on mouse
@@ -1225,7 +1295,7 @@ document.querySelectorAll(".ftab").forEach(tab=>{
 </style>
 
 <!-- WHATSAPP FLOAT BUTTON -->
-<a href="https://wa.me/966595074317" class="wa-float" target="_blank" aria-label="WhatsApp">
+<a href="https://wa.me/966595074317" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>

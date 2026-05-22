@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "claude -p \"Look at the conversation that just ended and update the Changelog table in /Users/mr.ayman/Desktop/aydesignweb.github.io/CLAUDE.md. Add a new row at the TOP of the table (below the header) with today's date ($(date +%Y-%m-%d)) and a 1-2 sentence summary of the key changes made in this session. Only add a row if real changes were made — skip if the session was read-only. Keep existing rows intact.\" --allowedTools \"Read,Edit,Bash\""
+          }
+        ]
+      }
+    ]
+  }
+}
