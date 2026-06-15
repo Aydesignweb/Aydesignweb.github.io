@@ -127,7 +127,7 @@ nav.scrolled{background:rgba(245,245,243,0.95);backdrop-filter:blur(12px);border
 .lang-btn:hover{background:var(--black);color:var(--white);}
 
 /* HERO */
-#hero{height:100vh;display:flex;align-items:center;padding:0 60px;position:relative;overflow:hidden;}
+#hero{height:100vh;display:flex;align-items:center;justify-content:space-between;padding:0 60px;position:relative;overflow:hidden;}
 .hero-content{position:relative;z-index:2;}
 .hero-eyebrow{font-size:9px;letter-spacing:6px;color:var(--mid);text-transform:uppercase;margin-bottom:40px;display:flex;align-items:center;gap:20px;opacity:0;animation:rise .9s .2s ease forwards;}
 .hero-eyebrow::before{content:'';width:40px;height:1px;background:var(--mid);}
@@ -155,6 +155,12 @@ body{direction:rtl;text-align:right;}
 .scroll-line{width:50px;height:1px;background:rgba(154,154,154,.3);position:relative;overflow:hidden;}
 .scroll-line::after{content:'';position:absolute;left:-100%;top:0;width:100%;height:100%;background:var(--mid);animation:scanline 2s ease infinite;}
 @keyframes scanline{0%{left:-100%;}50%{left:0%;}100%{left:100%;}}
+
+/* HERO VIDEO PANEL */
+.hero-vid-panel{position:relative;width:44%;height:78vh;overflow:hidden;flex-shrink:0;align-self:center;}
+.hero-vid-panel::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,transparent 50%,var(--white) 100%),linear-gradient(to bottom,var(--white) 0%,transparent 12%,transparent 88%,var(--white) 100%);z-index:2;pointer-events:none;}
+.hero-panel-video{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 2s ease;}
+.hero-panel-video.ready{opacity:1;}
 
 /* MARQUEE */
 .marquee-wrap{overflow:hidden;padding:32px 0;border-top:1px solid var(--gray);border-bottom:1px solid var(--gray);}
@@ -376,6 +382,7 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
   footer{flex-direction:column;gap:20px;text-align:center;}
   .wa-float{bottom:20px;right:20px;width:50px;height:50px;}
   .wa-float svg{width:26px;height:26px;}
+  .hero-vid-panel{display:none;}
 }
 </style>
 </head>
@@ -425,6 +432,11 @@ footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:
     <h1 class="hero-title" data-ar="نصمم" data-en="We Design">نصمم<br><em><span id="heroRotate" data-ar="هويات" data-en="Brands">هويات</span></em></h1>
     <p class="hero-sub" data-ar="AY. Design &nbsp;·&nbsp; البساطة هي المفتاح" data-en="AY. Design &nbsp;·&nbsp; Where Simplicity Meets Creativity">AY. Design &nbsp;·&nbsp; البساطة هي المفتاح</p>
     <a href="https://wa.me/966595074317" target="_blank" rel="noopener noreferrer" class="hero-cta" data-ar="ابدأ مشروعك &nbsp;←" data-en="Start a Project &nbsp;→">ابدأ مشروعك &nbsp;←</a>
+  </div>
+  <div class="hero-vid-panel">
+    <video class="hero-panel-video" autoplay muted loop playsinline preload="auto">
+      <source src="videos/hero-reel.mp4" type="video/mp4">
+    </video>
   </div>
   <div class="hero-triangle" data-speed="0.03"></div>
   <div class="hero-slash" data-speed="0.05"></div>
@@ -1074,6 +1086,15 @@ document.querySelectorAll(".ftab").forEach(tab=>{
 /* ===== MOTION PACKAGE ===== */
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const finePointer = window.matchMedia("(pointer: fine)").matches;
+
+// Hero panel video fade-in
+(function(){
+  const vid = document.querySelector(".hero-panel-video");
+  if(!vid) return;
+  if(reduceMotion){ vid.pause(); return; }
+  function markReady(){ vid.classList.add("ready"); }
+  vid.readyState >= 3 ? markReady() : vid.addEventListener("canplay", markReady, {once:true});
+})();
 
 // Scroll progress + parallax (single rAF-throttled listener)
 (function(){
