@@ -1,24 +1,50 @@
-// Language toggle for article pages
-(function(){
-  let currentLang = "ar";
-  const btn = document.getElementById("langToggle");
-  if(!btn) return;
-  btn.addEventListener("click", function(){
-    currentLang = currentLang === "ar" ? "en" : "ar";
-    this.textContent = currentLang === "ar" ? "EN" : "عربي";
-    document.documentElement.lang = currentLang;
-    document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
-    document.body.dir = currentLang === "ar" ? "rtl" : "ltr";
-    document.querySelectorAll("[data-"+currentLang+"]").forEach(el => {
-      el.textContent = el.dataset[currentLang];
+/* AY. Design — shared.js
+   Language toggle + bilingual content for service & article pages.
+   Matches the language system in index.html exactly.
+   --------------------------------------------------------------- */
+
+(function () {
+  'use strict';
+
+  /* ─── Helpers ──────────────────────────────────────── */
+
+  function applyLang(lang) {
+    const isAr = lang === 'ar';
+    document.documentElement.lang = lang;
+    document.body.dir = isAr ? 'rtl' : 'ltr';
+
+    // Swap textContent from data-ar / data-en
+    document.querySelectorAll('[data-ar]').forEach(function (el) {
+      el.textContent = isAr ? el.dataset.ar : el.dataset.en;
     });
-    document.querySelectorAll("[data-"+currentLang+"-html]").forEach(el => {
-      el.innerHTML = el.dataset[currentLang+"Html"];
+
+    // Swap innerHTML from data-ar-html / data-en-html
+    document.querySelectorAll('[data-ar-html]').forEach(function (el) {
+      el.innerHTML = isAr ? el.dataset.arHtml : el.dataset.enHtml;
     });
-    // Update page title
-    const titleEl = document.querySelector("title");
-    if(titleEl && titleEl.dataset[currentLang]){
-      titleEl.textContent = titleEl.dataset[currentLang];
+
+    // Update lang button label (shows the *other* language)
+    var btn = document.getElementById('langToggle');
+    if (btn) btn.textContent = isAr ? 'EN' : 'عر';
+
+    localStorage.setItem('ay_lang', lang);
+  }
+
+  /* ─── Init ──────────────────────────────────────────── */
+
+  var saved = localStorage.getItem('ay_lang') || 'ar';
+  applyLang(saved);
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Re-apply after DOM is fully ready (handles late hydration)
+    applyLang(localStorage.getItem('ay_lang') || 'ar');
+
+    var btn = document.getElementById('langToggle');
+    if (btn) {
+      btn.addEventListener('click', function () {
+        var current = localStorage.getItem('ay_lang') || 'ar';
+        applyLang(current === 'ar' ? 'en' : 'ar');
+      });
     }
   });
 })();
