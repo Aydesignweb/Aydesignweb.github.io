@@ -211,8 +211,24 @@ em{font-style:normal;color:var(--lime)}
 /* ---------- Clients ---------- */
 .clients{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,6vw,96px);align-items:center;
   padding:clamp(72px,11vw,150px) var(--pad);border-top:1px solid var(--line)}
-.logo-wall{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)}
-.logo-wall img{width:100%;height:auto}
+/* The wall is the flat export sliced into its four columns; each column drifts
+   on its own, alternating direction, so the logos rise and fall against each other.
+   Each track holds the strip twice, so translating it by -50% loops seamlessly. */
+.logo-wall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel);
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);
+  mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent)}
+.lw-col{overflow:hidden;height:clamp(300px,34vw,520px)}
+.lw-track{display:flex;flex-direction:column;will-change:transform;animation:lw-down var(--t,46s) linear infinite}
+.lw-col.up .lw-track{animation-name:lw-up}
+.lw-col:nth-child(1) .lw-track{--t:52s}
+.lw-col:nth-child(2) .lw-track{--t:41s}
+.lw-col:nth-child(3) .lw-track{--t:58s}
+.lw-col:nth-child(4) .lw-track{--t:46s}
+.lw-track img{width:100%;height:auto;flex:none}
+@keyframes lw-down{from{transform:translateY(-50%)}to{transform:translateY(0)}}
+@keyframes lw-up{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.logo-wall:hover .lw-track{animation-play-state:paused}
 
 /* ---------- Section head ---------- */
 .sec-head{padding:clamp(72px,10vw,140px) var(--pad) 0;display:grid;gap:18px}
@@ -329,6 +345,20 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
   -webkit-mask-image:linear-gradient(to bottom,transparent,#000 40%,#000 70%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 40%,#000 70%,transparent)}
 .contact .txt::before{opacity:.4}
 
+/* Light touch: the micro AY texture behind the sections that are otherwise bare
+   black. Masked to a corner and barely there — texture, never wallpaper. */
+.process,#articles,.testi-wrap{position:relative;isolation:isolate}
+.process::before,#articles::before,.testi-wrap::before{content:"";position:absolute;inset:0;z-index:-1;
+  background-repeat:repeat;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2252%22 viewBox=%220 0 40 52%22%3E%3Cg%3E%3Crect width=%2240%22 height=%2252%22 fill=%22%230c0c0d%22/%3E%3Cg transform=%22translate%284 4%29 scale%280.16%29 translate%28-17.5 -71%29%22 fill=%22%23242427%22%3E%3Cpath d=%22M58.29,71l-40.79,100.2h2.26l12.38-30.5h42.53l18.01,45.04,6.39-14.55-40.79-100.2ZM53.42,88.5l20.47,50.17h-40.86l20.39-50.17Z%22/%3E%3Cpolygon points=%22115.78 129.45 91.59 182.41 85.92 195 69.56 230.79 72.09 230.79 118.24 129.45 115.78 129.45%22/%3E%3C/g%3E%3Cg transform=%22translate%2824 30%29 scale%280.16%29 translate%28-17.5 -71%29%22 fill=%22%23242427%22%3E%3Cpath d=%22M58.29,71l-40.79,100.2h2.26l12.38-30.5h42.53l18.01,45.04,6.39-14.55-40.79-100.2ZM53.42,88.5l20.47,50.17h-40.86l20.39-50.17Z%22/%3E%3Cpolygon points=%22115.78 129.45 91.59 182.41 85.92 195 69.56 230.79 72.09 230.79 118.24 129.45 115.78 129.45%22/%3E%3C/g%3E%3Cg transform=%22translate%2824 -22%29 scale%280.16%29 translate%28-17.5 -71%29%22 fill=%22%23242427%22%3E%3Cpath d=%22M58.29,71l-40.79,100.2h2.26l12.38-30.5h42.53l18.01,45.04,6.39-14.55-40.79-100.2ZM53.42,88.5l20.47,50.17h-40.86l20.39-50.17Z%22/%3E%3Cpolygon points=%22115.78 129.45 91.59 182.41 85.92 195 69.56 230.79 72.09 230.79 118.24 129.45 115.78 129.45%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  --px:0px;--py:312px;animation:drift 110s linear infinite}
+/* each section fades the texture from a different edge, so it never reads as a tile */
+.process::before{opacity:.5;-webkit-mask-image:radial-gradient(120% 90% at 85% 0%,#000,transparent 72%);mask-image:radial-gradient(120% 90% at 85% 0%,#000,transparent 72%)}
+#articles::before{opacity:.38;-webkit-mask-image:linear-gradient(to bottom,#000,transparent 45%);mask-image:linear-gradient(to bottom,#000,transparent 45%)}
+.testi-wrap::before{opacity:.42;-webkit-mask-image:radial-gradient(110% 80% at 10% 100%,#000,transparent 70%);mask-image:radial-gradient(110% 80% at 10% 100%,#000,transparent 70%)}
+[dir="ltr"] .process::before{-webkit-mask-image:radial-gradient(120% 90% at 15% 0%,#000,transparent 72%);mask-image:radial-gradient(120% 90% at 15% 0%,#000,transparent 72%)}
+[dir="ltr"] .testi-wrap::before{-webkit-mask-image:radial-gradient(110% 80% at 90% 100%,#000,transparent 70%);mask-image:radial-gradient(110% 80% at 90% 100%,#000,transparent 70%)}
+
 /* ---------- Reveal ---------- */
 .js .rv{opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
 .js .rv.in{opacity:1;transform:none}
@@ -336,6 +366,7 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
 
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important}
+  .lw-track{animation:none!important}
   .js .rv{opacity:1;transform:none}
   .scene .bg img{transform:none}
   .film video{display:none}
@@ -360,6 +391,10 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
 }
 @media (max-width:620px){
   .svc{grid-template-columns:1fr}
+  /* 2x2 instead of 4 narrow strips — the columns wrap to a second row,
+     so every logo stays on the page and stays readable */
+  .logo-wall{grid-template-columns:1fr 1fr}
+  .lw-col{height:clamp(240px,58vw,340px)}
   .proc-grid,.arts,.testi{grid-template-columns:1fr}
   .talk span.t{display:none}
   .stats{gap:22px}
@@ -466,8 +501,11 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
     <h2 class="d2" style="margin-top:22px" data-html-ar="وثقوا<br><span class='grey'>فينا</span><span class='lime'>.</span>" data-html-en="Trusted<br><span class='grey'>by</span><span class='lime'>.</span>">وثقوا<br><span class="grey">فينا</span><span class="lime">.</span></h2>
     <p class="body" style="margin-top:22px" data-ar="وزارات وهيئات وبنوك وشركات رائدة في السعودية — أكثر من ٥٠ علامة تجارية على مدى ١٠ سنوات." data-en="Ministries, authorities, banks and leading companies across Saudi Arabia — 50+ brands over 10 years.">وزارات وهيئات وبنوك وشركات رائدة في السعودية — أكثر من ٥٠ علامة تجارية على مدى ١٠ سنوات.</p>
   </div>
-  <div class="logo-wall rv s1">
-    <img src="v3-img/clients.jpg" alt="شعارات عملاء AY. Design: وزارة الإعلام، وزارة الثقافة، الحرمين، أوقاف، نداء الثقافة، أرامكو ديجيتال، SAP، الشركة السعودية للكهرباء، يونيكوم، بنك التنمية الاجتماعية، إيجارة للتمويل، الفنار، شركة المياه الوطنية، مكتب شؤون عائلة الراجحي وغيرها" loading="lazy" width="1210" height="820">
+  <div class="logo-wall rv s1" role="img" aria-label="شعارات عملاء AY. Design: وزارة الإعلام، وزارة الثقافة، الحرمين، أوقاف، نداء الثقافة، أرامكو ديجيتال، SAP، الشركة السعودية للكهرباء، يونيكوم، بنك التنمية الاجتماعية، إيجارة للتمويل، الفنار، شركة المياه الوطنية، مكتب شؤون عائلة الراجحي وغيرها">
+    <div class="lw-col" aria-hidden="true"><div class="lw-track"><img src="v3-img/clients-c1.jpg" alt="" loading="lazy" width="281" height="764"><img src="v3-img/clients-c1.jpg" alt="" loading="lazy" width="281" height="764"></div></div>
+    <div class="lw-col up" aria-hidden="true"><div class="lw-track"><img src="v3-img/clients-c2.jpg" alt="" loading="lazy" width="280" height="764"><img src="v3-img/clients-c2.jpg" alt="" loading="lazy" width="280" height="764"></div></div>
+    <div class="lw-col" aria-hidden="true"><div class="lw-track"><img src="v3-img/clients-c3.jpg" alt="" loading="lazy" width="280" height="764"><img src="v3-img/clients-c3.jpg" alt="" loading="lazy" width="280" height="764"></div></div>
+    <div class="lw-col up" aria-hidden="true"><div class="lw-track"><img src="v3-img/clients-c4.jpg" alt="" loading="lazy" width="281" height="764"><img src="v3-img/clients-c4.jpg" alt="" loading="lazy" width="281" height="764"></div></div>
   </div>
 </section>
 
@@ -667,7 +705,7 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
 </section>
 
 <!-- ============ TESTIMONIALS ============ -->
-<section>
+<section class="testi-wrap">
   <div class="sec-head">
     <span class="mono rv"><span class="lime">06</span> — <span class="t" data-ar="ماذا قالوا" data-en="What they said">ماذا قالوا</span></span>
     <h2 class="d2 rv" data-html-ar="آراء<br><span class='grey'>العملاء</span><span class='lime'>.</span>" data-html-en="Client<br><span class='grey'>reviews</span><span class='lime'>.</span>">آراء<br><span class="grey">العملاء</span><span class="lime">.</span></h2>
