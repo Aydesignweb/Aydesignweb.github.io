@@ -191,10 +191,29 @@ em{font-style:normal;color:var(--lime)}
 .split .img{position:relative;overflow:hidden;background:var(--panel)}
 .split .img img,.split .img video{width:100%;height:100%;object-fit:cover}
 .split .txt{display:flex;flex-direction:column;justify-content:center;padding:clamp(48px,8vw,120px) var(--pad);gap:24px}
-.stats{display:flex;gap:clamp(24px,5vw,64px);flex-wrap:wrap;margin-top:12px;padding-top:28px;border-top:1px solid var(--line)}
-.stats b{display:block;font-weight:400;font-size:clamp(32px,3.6vw,52px);letter-spacing:-.04em;font-family:var(--display)}
+/* The text column spans the full height of the image beside it: the lead block
+   sits at the top, the stats anchor the bottom, and the space falls between. */
+#about .txt{justify-content:space-between;gap:clamp(32px,5vh,64px)}
+.about-lead{display:flex;flex-direction:column;gap:24px}
+
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.5vw,40px);
+  padding-top:30px;border-top:1px solid var(--line)}
+.stats>div{position:relative;padding-top:18px}
+/* a hairline that grows under each figure as it counts */
+.stats i{position:absolute;top:0;inset-inline-start:0;height:2px;width:100%;background:var(--lime);
+  box-shadow:0 0 12px rgba(200,255,60,.55);transition:width 1.6s cubic-bezier(.16,1,.3,1)}
+.js .stats i{width:0}
+.js .stats.counted i{width:100%}
+.stats>div:nth-child(2) i{transition-delay:.12s}
+.stats>div:nth-child(3) i{transition-delay:.24s}
+.stats>div:nth-child(4) i{transition-delay:.36s}
+.stats b{display:block;font-weight:400;font-size:clamp(34px,4vw,58px);line-height:1;letter-spacing:-.04em;
+  font-family:var(--display);font-variant-numeric:tabular-nums}
 .stats b span{color:var(--lime)}
-.stats .mono{margin-top:6px;display:block}
+.stats .mono{margin-top:12px;display:block}
+/* the infinity mark breathes instead of counting */
+@keyframes pulse{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.07)}}
+.stats b.inf span{display:inline-block;animation:pulse 3.4s ease-in-out infinite}
 .tools{display:flex;gap:8px;flex-wrap:wrap}
 .tools span{border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.06em}
 
@@ -366,6 +385,8 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important}
   .lw-track{animation:none!important}
+  .stats i{transition:none!important;width:100%!important}
+  .stats b.inf span{animation:none!important;opacity:1}
   .js .rv{opacity:1;transform:none}
   .scene .bg img{transform:none}
   .film video{display:none}
@@ -395,6 +416,7 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
   .logo-wall{grid-template-columns:1fr 1fr}
   .lw-col{height:clamp(240px,58vw,340px)}
   .proc-grid,.arts,.testi{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr;gap:28px 20px}
   .talk span.t{display:none}
   .stats{gap:22px}
   footer{flex-direction:column;align-items:flex-start;gap:14px}
@@ -480,15 +502,17 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
 <section class="split" id="about">
   <div class="img rv"><img src="v3-img/stone.jpg" alt="علامة AY محفورة في الحجر — AY. Design" loading="lazy" width="1200" height="1600"></div>
   <div class="txt rv">
+    <div class="about-lead">
     <span class="mono"><span class="lime">01</span> — <span class="t" data-ar="من نحن" data-en="About">من نحن</span></span>
     <h2 class="d2" data-html-ar="البساطة<br><span class='grey'>هي المفتاح</span><span class='lime'>.</span>" data-html-en="Simplicity<br><span class='grey'>is the key</span><span class='lime'>.</span>">البساطة<br><span class="grey">هي المفتاح</span><span class="lime">.</span></h2>
     <p class="body" data-html-ar="<b>AY. Design — استوديو تصميم جرافيك إبداعي.</b> نبني هويات بصرية قوية، ونصمم حملات سوشيال ميديا جذابة، وننتج مطبوعات احترافية وعروضاً تقديمية مؤثرة. بخبرة تتجاوز ١٠ سنوات وخدمة أكثر من ٥٠ علامة تجارية، نحوّل الأفكار إلى قصص بصرية تلهم وتحقق النتائج." data-html-en="<b>AY. Design — a creative graphic design studio.</b> We build powerful brand identities, craft engaging social campaigns, and produce professional print and impactful presentations. With over 10 years of experience and 50+ brands served, we turn ideas into visual stories that inspire and deliver."><b>AY. Design — استوديو تصميم جرافيك إبداعي.</b> نبني هويات بصرية قوية، ونصمم حملات سوشيال ميديا جذابة، وننتج مطبوعات احترافية وعروضاً تقديمية مؤثرة. بخبرة تتجاوز ١٠ سنوات وخدمة أكثر من ٥٠ علامة تجارية، نحوّل الأفكار إلى قصص بصرية تلهم وتحقق النتائج.</p>
     <div class="tools"><span>Photoshop</span><span>Illustrator</span><span>InDesign</span><span>Lightroom</span><span>PowerPoint</span></div>
+    </div>
     <div class="stats" dir="ltr">
-      <div><b>10<span>+</span></b><span class="mono t" data-ar="سنوات خبرة" data-en="Years">سنوات خبرة</span></div>
-      <div><b>50<span>+</span></b><span class="mono t" data-ar="علامة تجارية" data-en="Brands">علامة تجارية</span></div>
-      <div><b>6</b><span class="mono t" data-ar="خدمات أساسية" data-en="Services">خدمات أساسية</span></div>
-      <div><b><span>∞</span></b><span class="mono t" data-ar="رؤية إبداعية" data-en="Vision">رؤية إبداعية</span></div>
+      <div><i></i><b data-to="10" data-suffix="+">10<span>+</span></b><span class="mono t" data-ar="سنوات خبرة" data-en="Years">سنوات خبرة</span></div>
+      <div><i></i><b data-to="50" data-suffix="+">50<span>+</span></b><span class="mono t" data-ar="علامة تجارية" data-en="Brands">علامة تجارية</span></div>
+      <div><i></i><b data-to="6">6</b><span class="mono t" data-ar="خدمات أساسية" data-en="Services">خدمات أساسية</span></div>
+      <div><i></i><b class="inf"><span>&#8734;</span></b><span class="mono t" data-ar="رؤية إبداعية" data-en="Vision">رؤية إبداعية</span></div>
     </div>
   </div>
 </section>
@@ -861,6 +885,38 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
     var p = fv.play(); if (p && p.catch) p.catch(function(){});
   }
 
+
+  /* ---------- stats count up ---------- */
+  var stats = document.querySelector('.stats');
+  if (stats){
+    var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var runCount = function(){
+      stats.classList.add('counted');
+      [].slice.call(stats.querySelectorAll('b[data-to]')).forEach(function(b){
+        var to = parseInt(b.getAttribute('data-to'), 10);
+        var suffix = b.getAttribute('data-suffix') || '';
+        var tail = suffix ? '<span>' + suffix + '</span>' : '';
+        if (still){ b.innerHTML = to + tail; return; }
+        b.innerHTML = '0' + tail;
+        var dur = 1500, t0 = null;
+        var step = function(ts){
+          if (t0 === null) t0 = ts;
+          var p = Math.min((ts - t0) / dur, 1);
+          /* ease-out so it decelerates onto the final number */
+          var eased = 1 - Math.pow(1 - p, 3);
+          b.innerHTML = Math.round(to * eased) + tail;
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
+    };
+    if ('IntersectionObserver' in window){
+      var co = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if (e.isIntersecting){ runCount(); co.disconnect(); } });
+      }, {rootMargin:'0px 0px -15% 0px'});
+      co.observe(stats);
+    } else runCount();
+  }
 
   /* ---------- nav active state ---------- */
   var navLinks = [].slice.call(document.querySelectorAll('.hdr nav a'));
