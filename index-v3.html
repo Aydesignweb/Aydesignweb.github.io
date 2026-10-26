@@ -146,7 +146,10 @@ em{font-style:normal;color:var(--lime)}
   padding:18px var(--gr) 16px var(--gl);padding-top:max(18px,env(safe-area-inset-top,0px));
   transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
 .hdr.solid{background:rgba(12,12,13,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
-.brand{display:flex;align-items:center;gap:10px}
+.brand{display:flex;align-items:center;gap:11px}
+/* ay-logo.png is a black mark on transparency — invert it to sit on the dark ground */
+.brand-mark{height:38px;width:auto;filter:invert(1);transition:filter .3s}
+.brand:hover .brand-mark{filter:invert(1) drop-shadow(0 0 7px rgba(200,255,60,.75))}
 .hdr nav{display:flex;gap:26px}
 .hdr nav a{position:relative}
 .hdr nav a:hover,.hdr nav a.on{color:var(--lime)}
@@ -205,6 +208,12 @@ em{font-style:normal;color:var(--lime)}
 .marq-track span::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--lime);opacity:.5;flex:none}
 [data-lang="ar"] .marq-track span{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:14px}
 
+/* ---------- Clients ---------- */
+.clients{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,6vw,96px);align-items:center;
+  padding:clamp(72px,11vw,150px) var(--pad);border-top:1px solid var(--line)}
+.logo-wall{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)}
+.logo-wall img{width:100%;height:auto}
+
 /* ---------- Section head ---------- */
 .sec-head{padding:clamp(72px,10vw,140px) var(--pad) 0;display:grid;gap:18px}
 .sec-head .body{margin-top:4px}
@@ -222,23 +231,6 @@ em{font-style:normal;color:var(--lime)}
 .services .img{position:relative;overflow:hidden}
 .services .img img{width:100%;height:100%;object-fit:cover}
 
-/* ---------- Work ---------- */
-.filters{display:flex;gap:10px;flex-wrap:wrap;padding:36px var(--pad) 0}
-.ftab{border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);transition:all .3s}
-[data-lang="ar"] .ftab{font-family:var(--ar);letter-spacing:0;text-transform:none;font-size:13px}
-.ftab:hover{border-color:rgba(200,255,60,.5);color:var(--fg)}
-.ftab.on{background:var(--lime);border-color:var(--lime);color:#000}
-.plates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);padding:clamp(32px,4vw,56px) var(--pad) clamp(64px,9vw,120px)}
-.plate{margin:0;display:flex;flex-direction:column;gap:13px}
-.plate.hide{display:none}
-.plate .frame{position:relative;overflow:hidden;border-radius:4px;background:var(--panel);cursor:zoom-in;aspect-ratio:1754/1240}
-.plate img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.16,1,.3,1)}
-.plate .frame:hover img{transform:scale(1.03)}
-.plate .frame::after{content:"";position:absolute;inset:auto auto 14px 14px;width:38px;height:38px;border-radius:50%;background:rgba(12,12,13,.72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 18L18 6M8.5 6H18v9.5' stroke='%23c8ff3c' stroke-width='1.6' fill='none'/%3E%3C/svg%3E") center/17px no-repeat;opacity:0;transform:scale(.7);transition:opacity .35s,transform .45s cubic-bezier(.34,1.56,.64,1)}
-.plate .frame:hover::after{opacity:1;transform:none}
-[dir="ltr"] .plate .frame::after{inset:auto 14px 14px auto}
-.plate figcaption{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline}
-.plate figcaption .t{font-size:16px;font-weight:500;letter-spacing:-.01em}
 
 /* ---------- Film interlude ---------- */
 .film{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;border-top:1px solid var(--line)}
@@ -311,16 +303,6 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-
 footer ul{display:flex;gap:20px;list-style:none}
 footer a:hover{color:var(--lime)}
 
-/* ---------- Lightbox ---------- */
-.lb[hidden]{display:none!important}
-.lb{position:fixed;inset:0;z-index:90;background:rgba(6,6,7,.96);display:flex;align-items:center;justify-content:center;padding:max(56px,env(safe-area-inset-top)) var(--gr) 56px var(--gl)}
-.lb img{max-height:100%;width:auto;max-width:100%;border-radius:3px}
-.lb button{position:absolute;border:1px solid var(--line);border-radius:999px;width:44px;height:44px;cursor:pointer;color:var(--fg);background:rgba(12,12,13,.6)}
-.lb button:hover{border-color:var(--lime);color:var(--lime)}
-.lb .x{top:max(14px,env(safe-area-inset-top));inset-inline-end:var(--gr)}
-.lb .pv{left:var(--gl);top:50%}
-.lb .nx{right:var(--gr);top:50%}
-.lb .cap{position:absolute;bottom:18px;left:0;right:0;text-align:center;padding:0 20px}
 
 /* ---------- AY icons: draw-on motion ---------- */
 .ico{width:22px;height:22px;flex:none;overflow:visible;color:inherit;--ay-accent:var(--lime)}
@@ -375,11 +357,9 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
   .split.rev .img{order:-1}
   .proc-grid{grid-template-columns:1fr 1fr}
   .arts,.testi{grid-template-columns:1fr 1fr}
-  .lb .pv,.lb .nx{display:none}
 }
 @media (max-width:620px){
   .svc{grid-template-columns:1fr}
-  .plates{grid-template-columns:1fr}
   .proc-grid,.arts,.testi{grid-template-columns:1fr}
   .talk span.t{display:none}
   .stats{gap:22px}
@@ -390,11 +370,14 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
 <body>
 
 <header class="hdr" id="hdr">
-  <a class="brand mono" href="#top"><span class="dot"></span><span>AY Design — Studio</span></a>
+  <a class="brand" href="#top" aria-label="AY. Design — الصفحة الرئيسية">
+    <span class="dot"></span>
+    <img class="brand-mark" src="ay-logo.png" alt="AY. Design" width="411" height="261">
+  </a>
   <nav class="mono" aria-label="القائمة الرئيسية">
     <a href="#about" class="t" data-ar="من نحن" data-en="About">من نحن</a>
     <a href="#services" class="t" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
-    <a href="#work" class="t" data-ar="أعمالنا" data-en="Work">أعمالنا</a>
+    <a href="#clients" class="t" data-ar="العملاء" data-en="Clients">العملاء</a>
     <a href="#process" class="t" data-ar="كيف نشتغل" data-en="Process">كيف نشتغل</a>
     <a href="#articles" class="t" data-ar="مقالات" data-en="Articles">مقالات</a>
     <a href="#contact" class="t" data-ar="تواصل" data-en="Contact">تواصل</a>
@@ -413,7 +396,7 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
   <button class="x" id="mobX" type="button" aria-label="إغلاق">✕</button>
   <a href="#about" class="t" data-ar="من نحن" data-en="About">من نحن</a>
   <a href="#services" class="t" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
-  <a href="#work" class="t" data-ar="أعمالنا" data-en="Work">أعمالنا</a>
+  <a href="#clients" class="t" data-ar="العملاء" data-en="Clients">العملاء</a>
   <a href="#process" class="t" data-ar="كيف نشتغل" data-en="Process">كيف نشتغل</a>
   <a href="#articles" class="t" data-ar="مقالات" data-en="Articles">مقالات</a>
   <a href="#contact" class="t" data-ar="تواصل" data-en="Contact">تواصل</a>
@@ -476,24 +459,22 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
   </div>
 </section>
 
-<!-- ============ CLIENTS MARQUEE ============ -->
-<div class="marq" aria-label="عملاؤنا">
-  <div class="marq-track">
-    <span>الشركة السعودية للكهرباء</span><span>وزارة العدل</span><span>اتحاد الغرف التجارية</span>
-    <span>يونيكوم</span><span>Palme D'Or</span><span>إجارة للتمويل</span><span>Arco Valley</span>
-    <span>VACA Burger</span><span>BeeLine</span><span>6th Street</span><span>ATTA BASES</span>
-    <span>مطعم سلوى</span><span>GamaVisa</span><span>Zerofatty</span><span>Syrup</span>
-    <span>الشركة السعودية للكهرباء</span><span>وزارة العدل</span><span>اتحاد الغرف التجارية</span>
-    <span>يونيكوم</span><span>Palme D'Or</span><span>إجارة للتمويل</span><span>Arco Valley</span>
-    <span>VACA Burger</span><span>BeeLine</span><span>6th Street</span><span>ATTA BASES</span>
-    <span>مطعم سلوى</span><span>GamaVisa</span><span>Zerofatty</span><span>Syrup</span>
+<!-- ============ CLIENTS ============ -->
+<section class="clients" id="clients">
+  <div class="rv">
+    <span class="mono"><span class="lime">02</span> — <span class="t" data-ar="العملاء" data-en="Clients">العملاء</span></span>
+    <h2 class="d2" style="margin-top:22px" data-html-ar="وثقوا<br><span class='grey'>فينا</span><span class='lime'>.</span>" data-html-en="Trusted<br><span class='grey'>by</span><span class='lime'>.</span>">وثقوا<br><span class="grey">فينا</span><span class="lime">.</span></h2>
+    <p class="body" style="margin-top:22px" data-ar="وزارات وهيئات وبنوك وشركات رائدة في السعودية — أكثر من ٥٠ علامة تجارية على مدى ١٠ سنوات." data-en="Ministries, authorities, banks and leading companies across Saudi Arabia — 50+ brands over 10 years.">وزارات وهيئات وبنوك وشركات رائدة في السعودية — أكثر من ٥٠ علامة تجارية على مدى ١٠ سنوات.</p>
   </div>
-</div>
+  <div class="logo-wall rv s1">
+    <img src="v3-img/clients.jpg" alt="شعارات عملاء AY. Design: وزارة الإعلام، وزارة الثقافة، الحرمين، أوقاف، نداء الثقافة، أرامكو ديجيتال، SAP، الشركة السعودية للكهرباء، يونيكوم، بنك التنمية الاجتماعية، إيجارة للتمويل، الفنار، شركة المياه الوطنية، مكتب شؤون عائلة الراجحي وغيرها" loading="lazy" width="1210" height="820">
+  </div>
+</section>
 
 <!-- ============ SERVICES ============ -->
 <section class="services" id="services">
   <div class="txt">
-    <span class="mono rv"><span class="lime">02</span> — <span class="t" data-ar="خدماتنا" data-en="What we do">خدماتنا</span></span>
+    <span class="mono rv"><span class="lime">03</span> — <span class="t" data-ar="خدماتنا" data-en="What we do">خدماتنا</span></span>
     <h2 class="d2 rv" style="margin-top:22px" data-html-ar="أفكار واضحة،<br><span class='grey'>بعناية في التنفيذ</span><span class='lime'>.</span>" data-html-en="Clear ideas,<br><span class='grey'>crafted with care</span><span class='lime'>.</span>">أفكار واضحة،<br><span class="grey">بعناية في التنفيذ</span><span class="lime">.</span></h2>
     <div class="svc rv draw">
 
@@ -555,73 +536,6 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
   </div>
   <div class="img"><img src="v3-img/glass.jpg" alt="ألواح زجاجية مضاءة بالليموني والأزرق — AY. Design" loading="lazy" width="1200" height="1600"></div>
 </section>
-
-<!-- ============ WORK ============ -->
-<section class="scene" id="work">
-  <div class="bg"><img src="v3-img/open-identity.jpg" alt="قرطاسية سوداء وقلم على رخام داكن — أعمال AY. Design" loading="lazy" width="1920" height="1080"></div>
-  <div class="scene-in">
-    <div class="k mono draw rv">
-      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M12 3.5L4 20.5M7 14.25h7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="miter" stroke-linecap="square"/><path class="ay-h" pathLength="1" d="M12 3.5l4.6 17" stroke="var(--ay-accent,currentColor)" stroke-width="3" fill="none" stroke-linecap="butt"/><path pathLength="1" d="M20.5 9.5L13.6 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="miter" stroke-linecap="square"/></svg>
-      <span class="lime">03</span>
-    </div>
-    <h2 class="d1" data-html-ar="أعمال<br>مختارة" data-html-en="Selected<br>Work">أعمال<br>مختارة</h2>
-    <p class="side t" data-ar="هويات، حملات سوشيال، مطبوعات وعروض — نماذج من أعمالنا مع علامات وجهات سعودية." data-en="Identities, social campaigns, print and decks — selected work with Saudi brands and entities.">هويات، حملات سوشيال، مطبوعات وعروض — نماذج من أعمالنا مع علامات وجهات سعودية.</p>
-  </div>
-</section>
-
-<div class="filters" role="group" aria-label="تصفية الأعمال">
-  <button class="ftab on" data-filter="all" data-ar="الكل" data-en="All">الكل</button>
-  <button class="ftab" data-filter="social" data-ar="سوشيال ميديا" data-en="Social">سوشيال ميديا</button>
-  <button class="ftab" data-filter="branding" data-ar="هوية بصرية" data-en="Branding">هوية بصرية</button>
-  <button class="ftab" data-filter="print" data-ar="مطبوعات" data-en="Print">مطبوعات</button>
-  <button class="ftab" data-filter="pres" data-ar="عروض تقديمية" data-en="Presentations">عروض تقديمية</button>
-</div>
-
-<div class="plates" id="plates">
-
-  <figure class="plate rv" data-cat="social"><div class="frame"><img src="images/sec-social.jpg" alt="تصميم سوشيال ميديا للشركة السعودية للكهرباء — AY. Design" loading="lazy" width="1754" height="1240"></div>
-    <figcaption><span class="t">الشركة السعودية للكهرباء</span><span class="mono">Social Media</span></figcaption></figure>
-
-  <figure class="plate rv s1" data-cat="social"><div class="frame"><img src="images/palmedOr-social.jpg" alt="تصميم سوشيال ميديا لعطر Palme D'Or — AY. Design" loading="lazy" width="1754" height="1240"></div>
-    <figcaption><span class="t">Palme D'Or</span><span class="mono">Social · Fragrance</span></figcaption></figure>
-
-  <figure class="plate rv" data-cat="branding"><div class="frame"><img src="images/razen-brand.jpg" alt="تصميم هوية بصرية لمكتب رئيس للمحاماة — AY. Design" loading="lazy" width="1754" height="1240"></div>
-    <figcaption><span class="t">مكتب رئيس للمحاماة</span><span class="mono">Brand Identity</span></figcaption></figure>
-
-  <figure class="plate rv s1" data-cat="social"><div class="frame"><img src="images/ijarah-social.jpg" alt="تصميم سوشيال ميديا لإجارة للتمويل — AY. Design" loading="lazy" width="1754" height="1240"></div>
-    <figcaption><span class="t">إجارة للتمويل</span><span class="mono">Social · Finance</span></figcaption></figure>
-
-  <figure class="plate rv" data-cat="branding"><div class="frame"><img src="images/arco-brand.jpg" alt="تصميم هوية بصرية لـ Arco Valley العقارية — AY. Design" loading="lazy" width="1754" height="1240"></div>
-    <figcaption><span class="t">Arco Valley</span><span class="mono">Identity · Real estate</span></figcaption></figure>
-
-  <figure class="plate rv s1" data-cat="pres"><div class="frame"><img src="images/syrup-pres.jpg" alt="تصميم عرض تقديمي لـ Syrup — AY. Design" loading="lazy" width="1754" height="1240"></div>
-    <figcaption><span class="t">Syrup</span><span class="mono">Presentation · Entertainment</span></figcaption></figure>
-
-  <figure class="plate rv" data-cat="social"><div class="frame"><img src="images/vaca-social.jpg" alt="تصميم سوشيال ميديا لـ VACA Burger — AY. Design" loading="lazy" width="1754" height="1240"></div>
-    <figcaption><span class="t">VACA Burger</span><span class="mono">Social · F&amp;B</span></figcaption></figure>
-
-  <figure class="plate rv s1" data-cat="branding"><div class="frame"><img src="images/beeline-brand.jpg" alt="تصميم هوية بصرية لماركة BeeLine للأزياء — AY. Design" loading="lazy" width="1754" height="1240"></div>
-    <figcaption><span class="t">BeeLine</span><span class="mono">Identity · Fashion</span></figcaption></figure>
-
-  <figure class="plate rv" data-cat="print"><div class="frame"><img src="images/atta-print.jpg" alt="تصميم كتالوج مطبوعات لـ ATTA BASES — AY. Design" loading="lazy" width="1754" height="1240"></div>
-    <figcaption><span class="t">ATTA BASES</span><span class="mono">Print · Catalogue</span></figcaption></figure>
-
-  <figure class="plate rv s1" data-cat="social"><div class="frame"><img src="images/6thstreet-social.jpg" alt="تصميم سوشيال ميديا لـ 6th Street — AY. Design" loading="lazy" width="1754" height="1240"></div>
-    <figcaption><span class="t">6th Street</span><span class="mono">Social · Lifestyle</span></figcaption></figure>
-
-  <figure class="plate rv" data-cat="branding"><div class="frame"><img src="images/salwa-brand.jpg" alt="تصميم هوية بصرية لمطعم سلوى — AY. Design" loading="lazy" width="1754" height="1240"></div>
-    <figcaption><span class="t">مطعم سلوى</span><span class="mono">Identity · Restaurant</span></figcaption></figure>
-
-  <figure class="plate rv s1" data-cat="print"><div class="frame"><img src="images/gamavisa-print.jpg" alt="تصميم بطاقات أعمال لـ GamaVisa — AY. Design" loading="lazy" width="1754" height="1240"></div>
-    <figcaption><span class="t">GamaVisa</span><span class="mono">Print · Business cards</span></figcaption></figure>
-
-  <figure class="plate rv" data-cat="pres"><div class="frame"><img src="images/chambers-pres.jpg" alt="تصميم عرض تقديمي لاتحاد الغرف التجارية السعودية — AY. Design" loading="lazy" width="1754" height="1240"></div>
-    <figcaption><span class="t">اتحاد الغرف التجارية</span><span class="mono">Presentation · Government</span></figcaption></figure>
-
-  <figure class="plate rv s1" data-cat="print"><div class="frame"><img src="images/zestaritty-print.jpg" alt="تصميم رابّ سيارات لـ Zerofatty — AY. Design" loading="lazy" width="1754" height="1240"></div>
-    <figcaption><span class="t">Zerofatty</span><span class="mono">Print · Vehicle wrap</span></figcaption></figure>
-
-</div>
 
 <!-- ============ FILM ============ -->
 <section class="film" aria-label="فيلم شعار AY">
@@ -832,19 +746,12 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
   <span class="t" data-ar="© 2015–2026 AY. Design · الرياض، السعودية · جميع الحقوق محفوظة" data-en="© 2015–2026 AY. Design · Riyadh, Saudi Arabia · All rights reserved">© 2015–2026 AY. Design · الرياض، السعودية · جميع الحقوق محفوظة</span>
   <ul>
     <li><a href="#about" class="t" data-ar="من نحن" data-en="About">من نحن</a></li>
-    <li><a href="#work" class="t" data-ar="أعمالنا" data-en="Work">أعمالنا</a></li>
+    <li><a href="#clients" class="t" data-ar="العملاء" data-en="Clients">العملاء</a></li>
     <li><a href="faq.html" class="t" data-ar="أسئلة شائعة" data-en="FAQ">أسئلة شائعة</a></li>
     <li><a href="#contact" class="t" data-ar="تواصل" data-en="Contact">تواصل</a></li>
   </ul>
 </footer>
 
-<div class="lb" id="lb" hidden>
-  <img id="lbImg" alt="">
-  <button class="x" type="button" aria-label="إغلاق">✕</button>
-  <button class="pv" type="button" aria-label="السابق">←</button>
-  <button class="nx" type="button" aria-label="التالي">→</button>
-  <span class="cap mono" id="lbCap"></span>
-</div>
 
 <script>
 (function(){
@@ -917,45 +824,6 @@ a:hover .ico .ay-h{transform:translate(1.2px,-1.6px);filter:drop-shadow(0 0 3px 
     var p = fv.play(); if (p && p.catch) p.catch(function(){});
   }
 
-  /* ---------- work filters ---------- */
-  var tabs = [].slice.call(document.querySelectorAll('.ftab'));
-  var plates = [].slice.call(document.querySelectorAll('.plate'));
-  tabs.forEach(function(tab){
-    tab.addEventListener('click', function(){
-      tabs.forEach(function(t){ t.classList.remove('on'); });
-      tab.classList.add('on');
-      var f = tab.getAttribute('data-filter');
-      plates.forEach(function(p){
-        p.classList.toggle('hide', f !== 'all' && p.getAttribute('data-cat') !== f);
-      });
-    });
-  });
-
-  /* ---------- lightbox ---------- */
-  var frames = [].slice.call(document.querySelectorAll('.plate .frame img'));
-  var box = document.getElementById('lb'), bi = document.getElementById('lbImg'), cap = document.getElementById('lbCap'), i = 0;
-  function visible(){ return frames.filter(function(f){ return !f.closest('.plate').classList.contains('hide'); }); }
-  function show(k){
-    var list = visible(); if (!list.length) return;
-    i = (k + list.length) % list.length;
-    bi.src = list[i].src; bi.alt = list[i].alt;
-    cap.textContent = (i + 1) + ' / ' + list.length + ' — ' + list[i].alt;
-    box.hidden = false; document.body.style.overflow = 'hidden';
-  }
-  function hide(){ box.hidden = true; document.body.style.overflow = ''; }
-  frames.forEach(function(f){
-    f.parentNode.addEventListener('click', function(){ show(visible().indexOf(f)); });
-  });
-  box.querySelector('.x').onclick = hide;
-  box.querySelector('.pv').onclick = function(){ show(i - 1); };
-  box.querySelector('.nx').onclick = function(){ show(i + 1); };
-  box.addEventListener('click', function(e){ if (e.target === box) hide(); });
-  addEventListener('keydown', function(e){
-    if (box.hidden) return;
-    if (e.key === 'Escape') hide();
-    if (e.key === 'ArrowRight') show(i + 1);
-    if (e.key === 'ArrowLeft') show(i - 1);
-  });
 
   /* ---------- nav active state ---------- */
   var navLinks = [].slice.call(document.querySelectorAll('.hdr nav a'));
